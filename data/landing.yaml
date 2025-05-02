@@ -47,7 +47,10 @@ description:
   template: image text
 
   title: Cloud-native middleware for AI agents
-  subtitle: Kagenti bridges the gap between powerful agent frameworks and production readiness by providing secure identity management, configuration, fault tolerance, and persistence out of the box. Built on Kubernetes, Kagenti streamlines infrastructure integration and agent lifecycle management with a dedicated platform operator. It also replaces static credentials with dynamic, SPIRE-managed identities, ensuring secure, continuous authentication across workflows. With Kagenti, teams can move from development to scalable, secure production deployments of AI agents with ease.
+  subtitle: |
+    Kagenti bridges the gap between powerful agent frameworks and production readiness by providing secure identity management, configuration, fault tolerance, and persistence out of the box.
+
+    Built on Kubernetes, Kagenti streamlines infrastructure integration and agent lifecycle management with a dedicated platform operator. It also replaces static credentials with dynamic, SPIRE-managed identities, ensuring secure, continuous authentication across workflows. With Kagenti, teams can move from development to scalable, secure production deployments of AI agents with ease.
 
   image:
     path: "images"
