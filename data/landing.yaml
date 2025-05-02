@@ -1,0 +1,109 @@
+# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
+
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
+
+  badge:
+    text: v0.0.1
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
+
+  # titleLogo:
+  #   path: "images/logos"
+  #   filename: "logo.png"
+  #   alt: "Kagenti logo"
+  #   height: 80px
+
+  title: "Kagenti"
+  subtitle: A Kubernetes-based middleware providing a *framework-neutral*, *scalable* and *secure* platform for deploying and orchestrating AI agents through a standardized REST API.
+
+  image:
+    path: "images" # path to image under configured assets directory. default 'images'
+    filename: "banner.png" # filename of your hero image (including file extension)
+    alt: "Kagenti banner" # Optional but recommended
+    boxShadow: true # default 'false' (excludes .svg images)
+    rounded: true # round the image corners? default 'false' (excludes .svg images)
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "View on GitHub"
+    url: "https://github.com/kagenti/kagenti"
+
+  info: "**Open Source** Apache Licensed."
+
+description:
+  enable: true
+  weight: 25
+  template: image text
+
+  title: Cloud-native middleware for AI agents
+  subtitle: Kagenti bridges the gap between powerful agent frameworks and production readiness by providing secure identity management, configuration, fault tolerance, and persistence out of the box. Built on Kubernetes, Kagenti streamlines infrastructure integration and agent lifecycle management with a dedicated platform operator. It also replaces static credentials with dynamic, SPIRE-managed identities, ensuring secure, continuous authentication across workflows. With Kagenti, teams can move from development to scalable, secure production deployments of AI agents with ease.
+
+  image:
+    path: "images"
+    filename: "diagram.png"
+    alt: "Key propagation with Kagenti" # Optional but recommended
+
+  imgOrder:
+    desktop: 2
+    mobile: 1
+
+  ctaButton:
+    text: Learn more
+    url: https://github.com/kagenti/kagenti/blob/main/docs/tech-details.md
+
+pocs:
+  enable: true
+  weight: 30
+  template: feature grid
+
+  title: Proof of Concepts
+  # subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
+
+  items:
+    - title: Kubernetes Platform Operator
+      icon: smart_toy
+      description: The operator facilitates the deployment of new framework instances, supports the registration and scaling of multi-framework agents, and assists in setting up and configuring identity management and agents' authorizations.
+      ctaLink:
+        text: Learn more
+        url: https://github.com/kagenti/kagenti-operator/blob/main/beeai/INSTALL.md
+
+    - title: API Key Propagation
+      icon: key
+      description: API Key propagation for MCP does not work out of the box. With modifications to the Llama Stack MCP provider and an opinionated use of the MCP Python SDK, we demonstrate that an API key can be propagated from a Llama Stack client to a MCP tool server.
+      ctaLink:
+        text: Learn more
+        url: https://github.com/kagenti/kagenti/blob/main/docs/pocs.md#api-key-propagation-from-ls-client-to-mcp-tool-server
+
+    - title: Agent as MCP Tool
+      icon: build
+      description: This demo involves registering a CrewAI agent as a tool within the MCP framework. Once registered, the Llama Stack agent, configured with this tool, can utilize the CrewAI agent to conduct research on a given topic and provide a final result.
+      ctaLink:
+        text: Learn more
+        url: https://github.com/kagenti/kagenti/blob/main/docs/pocs.md#agent-as-tool
+
+
+
+
+# # The following overrides the default sections
+# Image text
+imageText:
+  enable: false
+
+# Feature grid
+featureGrid:
+  enable: false
+
+# Image compare
+imageCompare:
+  enable: false
