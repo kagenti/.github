@@ -65,12 +65,12 @@ description:
     text: Learn more
     url: https://github.com/kagenti/kagenti/blob/main/docs/tech-details.md
 
-pocs:
+components:
   enable: true
   weight: 30
   template: feature grid
 
-  title: Proof of Concepts
+  title: Components
   # subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:
@@ -86,14 +86,14 @@ pocs:
       description: API Key propagation for MCP does not work out of the box. With modifications to the Llama Stack MCP provider and an opinionated use of the MCP Python SDK, we demonstrate that an API key can be propagated from a Llama Stack client to a MCP tool server.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti/blob/main/docs/pocs.md#api-key-propagation-from-ls-client-to-mcp-tool-server
+        url: https://github.com/kagenti/kagenti/blob/main/docs/demos.md#api-key-propagation-from-ls-client-to-mcp-tool-server
 
     - title: Agent as MCP Tool
       icon: build
       description: This demo involves registering a CrewAI agent as a tool within the MCP framework. Once registered, the Llama Stack agent, configured with this tool, can utilize the CrewAI agent to conduct research on a given topic and provide a final result.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti/blob/main/docs/pocs.md#agent-as-tool
+        url: https://github.com/kagenti/kagenti/blob/main/docs/demos.md#agent-as-tool
 
 
 
