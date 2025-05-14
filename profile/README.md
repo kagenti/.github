@@ -1,6 +1,7 @@
-## Hi there 👋
+## Kagenti - The Agentic Platform
+Kagenti is a Cloud-native middleware providing a framework-neutral, scalable and secure platform for deploying and orchestrating AI agents through a standardized REST API.
 
-Test 1 
+Find out more: [http://kagenti.io](http://kagenti.io)
 <!--
 
 **Here are some ideas to get you started:**
