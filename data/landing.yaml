@@ -95,8 +95,35 @@ components:
         text: Learn more
         url: https://github.com/kagenti/kagenti/blob/main/docs/demos.md#agent-as-tool
 
+blogs:
+  enable: true
+  weight: 35
+  template: image text
 
+  title: Blogs
+  subtitle: "We write about cutting edge of cloud native, AI, and security.\n\nRecent articles:"
 
+  list:
+    - text: Toward a Cloud-Native Platform for AI Agents
+      icon: filter_drama
+
+    - text: Security in and around MCP
+      icon: lock
+
+    - text: "Identity in Agentic Platforms: Enabling Secure, Least-Privilege Access"
+      icon: accessibility
+
+  image:
+    path: "images"
+    filename: "towards.png"
+
+  imgOrder:
+    desktop: 1
+    mobile: 2
+
+  ctaButton:
+    text: Learn more
+    url: https://medium.com/kagenti-the-agentic-platform
 
 # # The following overrides the default sections
 # Image text
