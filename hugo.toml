@@ -1,8 +1,10 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Kagenti'
+description = 'Kubernetes Agent Platform for AI with secure identity'
 contentDir = 'content'
 enableEmoji = true
+tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
 
 [module]
     # uncomment line below for temporary local development of module
