@@ -12,11 +12,11 @@ hero:
       desktop: "gradient-desktop.webp"
       mobile: "gradient-mobile.webp"
 
-  badge:
-    text: v0.0.1
-    color: primary # primary, secondary, success, danger, warning, info, light, dark
-    pill: false # boolean
-    soft: true # boolean
+  # badge:
+  #   text: v0.0.1
+  #   color: primary # primary, secondary, success, danger, warning, info, light, dark
+  #   pill: false # boolean
+  #   soft: true # boolean
 
   # titleLogo:
   #   path: "images/logos"
@@ -25,7 +25,14 @@ hero:
   #   height: 80px
 
   title: "Kagenti"
-  subtitle: A Kubernetes-based middleware providing a *framework-neutral*, *scalable* and *secure* platform for deploying and orchestrating AI agents through a standardized REST API.
+  subtitle: |
+    An open source project aimed at showcasing interoperability of various cloud-native technologies for agentic platforms.
+
+    Our primary focus are the following aspects:
+    * [MCP Gateway](https://github.com/kagenti/mcp-gateway/blob/main/README.md)
+    * [Identity and Authorization Management](https://github.com/kagenti/kagenti/blob/main/docs/demo-identity.md)
+    * [Operators for Agent and Tool Life Cycle](https://github.com/kagenti/kagenti-operator/blob/main/README.md)
+    * [Demos](https://github.com/kagenti/kagenti/blob/main/docs/demos.md)
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
@@ -37,7 +44,7 @@ hero:
   ctaButton:
     icon: rocket_launch
     btnText: "View on GitHub"
-    url: "https://github.com/kagenti/kagenti"
+    url: "https://github.com/orgs/kagenti/repositories"
 
   info: "**Open Source** Apache Licensed."
 
