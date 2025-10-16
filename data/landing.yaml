@@ -32,7 +32,8 @@ hero:
     * [MCP Gateway](https://github.com/kagenti/mcp-gateway/blob/main/README.md)
     * [Identity and Authorization Management](https://github.com/kagenti/kagenti/blob/main/docs/demo-identity.md)
     * [Operators for Agent and Tool Life Cycle](https://github.com/kagenti/kagenti-operator/blob/main/README.md)
-    * [Demos](https://github.com/kagenti/kagenti/blob/main/docs/demos.md)
+
+    Check out our [Demos](https://github.com/kagenti/kagenti/blob/main/docs/demos.md)
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
