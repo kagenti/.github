@@ -56,4 +56,18 @@
         {{- template "_internal/google_analytics.html" . -}}
     {{- end -}}
     {{- end -}}
+    <!-- Custom spacing adjustments -->
+    <style>
+        /* Make spacing between hero and components equal to spacing after components */
+        section .container.mt-100 {
+            margin-top: 3rem !important;
+            margin-bottom: 3rem !important;
+        }
+        section .container.mt-60 {
+            margin-top: 3rem !important;
+        }
+        section .row.mt-5 {
+            margin-top: 1rem !important;
+        }
+    </style>
 </head>

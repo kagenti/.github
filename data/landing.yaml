@@ -26,14 +26,9 @@ hero:
 
   title: "Kagenti"
   subtitle: |
-    An open source project aimed at showcasing interoperability of various cloud-native technologies for agentic platforms.
+    Kagenti is an incubation project building a Kubernetes-based control plane for AI agents. It works with any agent framework and provides modular components that can be deployed independently or as a complete platform, streamlining production deployments for AI Engineers.
 
-    Our primary focus are the following aspects:
-    * [MCP Gateway](https://github.com/kagenti/mcp-gateway/blob/main/README.md)
-    * [Identity and Authorization Management](https://github.com/kagenti/kagenti/blob/main/docs/demo-identity.md)
-    * [Operators for Agent and Tool Life Cycle](https://github.com/kagenti/kagenti-operator/blob/main/README.md)
-
-    Check out our [Demos](https://github.com/kagenti/kagenti/blob/main/docs/demos.md)
+    Kagenti is under active development and open to new ideas.
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
@@ -50,29 +45,7 @@ hero:
   info: "**Open Source** Apache Licensed."
 
 description:
-  enable: true
-  weight: 25
-  template: image text
-
-  title: Cloud-Native Control Plane for AI Agents
-  subtitle: |
-    Kagenti bridges the gap between powerful agent frameworks and production-grade deployments. Built on proven cloud-native technologies, it delivers secure lifecycle and identity management, robust configuration, fault tolerance, unified control for agentic tools, and built-in observability.
-
-    Powered by Kubernetes, Kagenti simplifies infrastructure integration and agent lifecycle management through a dedicated Agent Operator. It enhances Kubernetes networking with an MCP-aware Gateway built on Envoy, and replaces static credentials with dynamic, SPIRE-managed identities—ensuring secure, continuous authentication across workflows.
-
-    With Kagenti, teams can seamlessly transition from development to scalable, secure production environments for AI agents.
-  image:
-    path: "images"
-    filename: "diagram.png"
-    alt: "Key propagation with Kagenti" # Optional but recommended
-
-  imgOrder:
-    desktop: 2
-    mobile: 1
-
-  ctaButton:
-    text: Learn more
-    url: https://github.com/kagenti/kagenti/tree/main
+  enable: false
 
 components:
   enable: true
@@ -83,26 +56,26 @@ components:
   # subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:
-    - title: Kagenti Operator
-      icon: smart_toy
-      description: The Kagenti Operator simplifies and streamlines the lifecycle management of AI agents on Kubernetes. Whether you're deploying from pre-built container images or directly from source code, Kagenti enables fast, flexible, and reliable automation—so your AI solutions can move from development to production with ease.
-      ctaLink:
-        text: Learn more
-        url: https://github.com/kagenti/kagenti-operator/tree/main/kagenti-operator
-
     - title: MCP Gateway
-      icon: key
-      description: MCP Gateway is a Kubernetes-native, Envoy-based gateway designed to streamline access to multiple Model Context Protocol (MCP) servers. It leverages Kubernetes APIs like the MCPServer CRD for declarative server management, HTTPRoute integration for automatic backend discovery, and an operator that keeps your configuration in sync. With flexible policy support, including integration with Kuadrant or any Envoy-compatible policy engine, MCP Gateway empowers you to build scalable, secure, and policy-driven AI infrastructure with ease.
+      icon: build
+      description: MCP Gateway is an Envoy-based gateway for connecting agents to tools via the Model Context Protocol (MCP). It provides centralized routing for multiple MCP servers and "virtual MCP servers" that group tools from different sources, enabling precise control over agent tool access and policy enforcement. A Kubernetes-native control plane adds declarative management via custom CRDs, automatic backend discovery through HTTPRoute integration, and Kuadrant support for authorization and token exchange policies.
       ctaLink:
         text: Learn more
         url: https://github.com/kagenti/mcp-gateway
 
-    - title: Identity and Tool Authorization Pattern
-      icon: build
-      description: Identity and Tool Authorization Pattern brings zero-trust security to the Agentic Platform by enforcing continuous authentication and fine-grained authorization for both human and machine identities. Built on SPIFFE/SPIRE and integrated with Keycloak, it replaces static credentials with dynamic, short-lived tokens, ensuring secure identity propagation and least-privilege access across services. Through structured token exchanges and real-time policy enforcement, this pattern enables secure delegation, robust machine identity management, and continuous verification—laying the foundation for scalable, production-ready agentic workflows.
+    - title: Agent Identity and Authorization Guard
+      icon: key
+      description: Agent Identity and Authorization Guard includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
       ctaLink:
         text: Learn more
         url: https://github.com/kagenti/kagenti?tab=readme-ov-file#agent-and-tool-authorization-pattern
+
+    - title: Kagenti Lifecycle Operators
+      icon: smart_toy
+      description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
+      ctaLink:
+        text: Learn more
+        url: https://github.com/kagenti/kagenti-operator/tree/main/kagenti-operator
 
 blogs:
   enable: true
