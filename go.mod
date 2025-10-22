@@ -1,6 +1,8 @@
 module github.com/Alan-Cha/kagenti-docs
 
-go 1.20
+go 1.21
+
+toolchain go1.21.4
 
 require (
 	github.com/colinwilson/lotusdocs v0.2.0 // indirect
