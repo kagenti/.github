@@ -69,5 +69,16 @@
         section .row.mt-5 {
             margin-top: 1rem !important;
         }
+        /* Align feature text with icon - keep icon and title on same line */
+        .features.feature-primary .flex-1 {
+            margin-left: 0 !important;
+        }
+        .features.feature-primary .flex-1 .para {
+            margin-left: calc(-1 * (3rem + 0.75rem)) !important;
+        }
+        /* Ensure all titles have same height for alignment */
+        .features.feature-primary .flex-1 .title {
+            min-height: 3.5rem !important;
+        }
     </style>
 </head>
