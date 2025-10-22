@@ -26,7 +26,7 @@ hero:
 
   title: "Kagenti"
   subtitle: |
-    Kagenti is an incubation project building a Kubernetes control plane for AI agents. It works with any agent framework and provides modular components that can be deployed independently or as a complete platform, streamlining production deployments for AI Engineers.
+    Kagenti is an incubation project building a Kubernetes-based control plane for AI agents. It works with any agent framework and provides modular components that can be deployed independently or as a complete platform, streamlining production deployments for AI Engineers.
 
     Kagenti is under active development and open to new ideas.
 
@@ -70,9 +70,9 @@ components:
         text: Learn more
         url: https://github.com/kagenti/kagenti?tab=readme-ov-file#agent-and-tool-authorization-pattern
 
-    - title: Kagenti Life-cycle Operators
+    - title: Kagenti Lifecycle Operators
       icon: smart_toy
-      description: Kagenti Life-cycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
+      description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
       ctaLink:
         text: Learn more
         url: https://github.com/kagenti/kagenti-operator/tree/main/kagenti-operator
