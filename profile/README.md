@@ -10,7 +10,7 @@ This project consists of following repositories:
 5. **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
 6. **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Extensions and plugins (Go)
 
-Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page. 
+Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
 Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
 
 Find out more: [http://kagenti.io](http://kagenti.io)
