@@ -86,7 +86,8 @@ blogs:
   subtitle: "We write about cutting edge of cloud native, AI, and security.\n\nRecent articles:"
 
   list:
-    - text: Introducing MCP-Gateway: A Unified Front Door for Your MCP Servers
+    - text: |
+        Introducing MCP-Gateway: A Unified Front Door for Your MCP Servers
       icon: build
       
     - text: Hands-On Introduction to Agentic AI Concepts with Kagenti

@@ -27,3 +27,16 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
   [markup.goldmark.parser]
     [markup.goldmark.parser.attribute]
       block = true
+
+[params]
+  [params.social]
+    github = "orgs/kagenti/repositories"
+    discord = "invite/4SHAQ3Hgm4"
+    youtube = "@Kagenti"
+
+[menu]
+  [[menu.primary]]
+    name  = "Blogs"
+    url = "https://medium.com/kagenti-the-agentic-platform"
+    identifier = "blogs"
+    weight = 10
