@@ -79,7 +79,7 @@ components:
 
 blogs:
   enable: true
-  weight: 35
+  weight: 34
   template: image text
 
   title: Blogs
@@ -113,6 +113,40 @@ blogs:
   ctaButton:
     text: Learn more
     url: https://medium.com/kagenti-the-agentic-platform
+
+demos:
+  enable: true
+  weight: 35
+  template: image text
+
+  title: Demos
+ 
+  list:
+    - text: |
+        Interactive online demo at KubeCon NA 2025: [Tutorial: Build-a-Bot Workshop: Enabling Trusted Agents With SPIRE + MCP](https://red.ht/3WL5Loc)
+      icon: event
+
+    - text: Simplest Demo - [Weather Service](https://github.com/kagenti/kagenti/blob/main/docs/demo-weather-agent.md)
+      icon: cloud
+
+    - text: Identity & Auth Demo - [Slack Authentication](https://github.com/kagenti/kagenti/blob/main/docs/demo-slack-research-agent.md)
+      icon: lock
+
+    - text: "Github Issue Demo - [Github Issue Agent](https://github.com/kagenti/kagenti/blob/main/docs/demo-github-issue.md) ([demo recording](https://youtu.be/5SpTwERN2jU))"
+      icon: bug_report
+
+  image:
+    path: "images"
+    filename: "demos.png"
+
+  imgOrder:
+    desktop: 1
+    mobile: 2
+
+  ctaButton:
+    text: Learn more
+    url: https://github.com/kagenti/kagenti/blob/main/docs/demos.md
+
 
 # # The following overrides the default sections
 # Image text
