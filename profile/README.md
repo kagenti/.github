@@ -9,7 +9,7 @@ This project consists of following repositories:
 4. **[kagenti-operator](https://github.com/kagenti/kagenti-operator)** - Kubernetes operator for agents/tools (Go)
 5. **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
 6. **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Extensions and plugins (Go)
-7. **[agentic-control-plane](https://github.com/kagenti/gentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs.
+7. **[agentic-control-plane](https://github.com/kagenti/agentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs.
 
 Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
 Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
