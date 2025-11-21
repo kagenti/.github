@@ -31,7 +31,7 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
 [params]
   [params.social]
     github = "orgs/kagenti/repositories"
-    discord = "channels/1397229074631626752/1417573678023049216"
+    discord = "https://discord.gg/aJ92dNDzqB"
     youtube = "@Kagenti"
 
 [menu]
