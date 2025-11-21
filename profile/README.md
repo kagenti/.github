@@ -14,7 +14,9 @@ This project consists of following repositories:
 Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
 Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
 
-Find out more: [http://kagenti.io](http://kagenti.io)
+Find out more: [http://kagenti.io](http://kagenti.io) 
+
+Let's chat! Meet us on our [Kagenti Dicord](https://discord.gg/aJ92dNDzqB) channel!
 <!--
 
 **Here are some ideas to get you started:**
