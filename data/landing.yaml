@@ -63,9 +63,9 @@ components:
         text: Learn more
         url: https://github.com/kagenti/mcp-gateway
 
-    - title: Agent Identity and Authorization Guard
+    - title: Identity and Authorization Bridge
       icon: key
-      description: Agent Identity and Authorization Guard includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
+      description: Identity and Authorization Bridge includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
       ctaLink:
         text: Learn more
         url: https://github.com/kagenti/kagenti?tab=readme-ov-file#agent-and-tool-authorization-pattern
