@@ -16,7 +16,7 @@ Project is maintained by [a team of developers](https://github.com/kagenti/kagen
 
 Find out more: [http://kagenti.io](http://kagenti.io) 
 
-Let's chat! Meet us on our [Kagenti Dicord](https://discord.gg/aJ92dNDzqB) channel!
+Let's chat! Meet us on our [Kagenti Discord](https://discord.gg/aJ92dNDzqB) channel!
 <!--
 
 **Here are some ideas to get you started:**
