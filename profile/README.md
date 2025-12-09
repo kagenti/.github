@@ -3,7 +3,7 @@ Kagenti is a Cloud-native middleware providing a framework-neutral, scalable and
 
 This project consists of following repositories:
 
-1. **[kagenti](https://github.com/kagenti/kagenti)** - Main installer and UI (Python)
+1. **[kagenti](https://github.com/kagenti/kagenti)** - Main installer, UI, and Documentation
 2. **[agent-examples](https://github.com/kagenti/agent-examples)** - Sample agents and tools (Python)  
 3. **[mcp-gateway](https://github.com/kagenti/mcp-gateway)** - Envoy-based MCP Gateway (Go)
 4. **[kagenti-operator](https://github.com/kagenti/kagenti-operator)** - Kubernetes operator for agents/tools (Go)
