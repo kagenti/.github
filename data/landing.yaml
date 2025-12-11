@@ -68,14 +68,14 @@ components:
       description: Identity and Authorization Bridge includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti?tab=readme-ov-file#agent-and-tool-authorization-pattern
+        url: https://github.com/kagenti/kagenti/blob/main/docs/demo-identity.md
 
     - title: Kagenti Lifecycle Operators
       icon: smart_toy
       description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti-operator/tree/main/kagenti-operator
+        url: https://github.com/kagenti/kagenti-extensions/tree/main/kagenti-webhook
 
 blogs:
   enable: true
