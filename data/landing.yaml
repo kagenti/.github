@@ -68,7 +68,7 @@ components:
       description: Identity and Authorization Bridge includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti/blob/main/docs/demo-identity.md
+        url: https://github.com/kagenti/kagenti/blob/main/docs/components.md#identity--auth-bridge
 
     - title: Kagenti Lifecycle Operators
       icon: smart_toy
