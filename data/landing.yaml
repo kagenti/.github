@@ -75,7 +75,7 @@ components:
       description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti-extensions/tree/main/kagenti-webhook
+        url: https://github.com/kagenti/kagenti/blob/main/docs/components.md#agent-lifecycle-operator
 
 blogs:
   enable: true
