@@ -3,7 +3,7 @@ name: Check links in Hugo site
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "fix_links"]
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * 0' # Runs every Sunday at 00:00 UTC
