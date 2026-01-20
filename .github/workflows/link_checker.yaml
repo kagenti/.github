@@ -17,8 +17,8 @@ jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-      # If you wanted to run linkcheck against the built site files in the repo,
-      # you would first do: - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Check links with linkcheck
         uses: filiph/linkcheck@3.0.0
         with:
