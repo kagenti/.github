@@ -1,0 +1,27 @@
+
+name: Check links in Hugo site
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at 00:00 UTC
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      # If you wanted to run linkcheck against the built site files in the repo,
+      # you would first do: - uses: actions/checkout@v4
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@3.0.0
+        with:
+          arguments: |
+            https://kagenti.github.io/.github/ \
+            --skip-file skip_file.txt
