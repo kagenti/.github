@@ -4,17 +4,18 @@ Kagenti is a Cloud-native middleware providing a framework-neutral, scalable and
 This project consists of following repositories:
 
 1. **[kagenti](https://github.com/kagenti/kagenti)** - Main installer, UI, and Documentation
-2. **[agent-examples](https://github.com/kagenti/agent-examples)** - Sample agents and tools (Python)  
+2. **[agent-examples](https://github.com/kagenti/agent-examples)** - Sample agents and tools (Python)
 3. **[mcp-gateway](https://github.com/kagenti/mcp-gateway)** - Envoy-based MCP Gateway (Go)
 4. **[kagenti-operator](https://github.com/kagenti/kagenti-operator)** - Kubernetes operator for agents/tools (Go)
 5. **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
 6. **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Extensions and plugins (Go)
 7. **[agentic-control-plane](https://github.com/kagenti/agentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs.
+8. **[plugins-adapter](https://github.com/kagenti/plugins-adapter)** - Adapter for security and safety plugins for Envoy gateways
 
 Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
 Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
 
-Find out more: [http://kagenti.io](http://kagenti.io) 
+Find out more: [http://kagenti.io](http://kagenti.io)
 
 Let's chat! Meet us on our [Kagenti Discord](https://discord.gg/aJ92dNDzqB) channel!
 <!--
