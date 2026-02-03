@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: Kagenti Maintainers
-    url: https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md
-    about: Please contact the maintainers for any questions.
-  - name: Coding Assistant Context
-    url: https://github.com/kagenti/kagenti/blob/main/CLAUDE.md
-    about: For our friendly coding assistants looking to understand Kagenti in particular.
