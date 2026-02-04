@@ -31,5 +31,5 @@ jobs:
         run: |
           echo "::error::PR title must start with one of:"
           echo "::error::  Build, Chore, Ci, CI, Docs, Feat, Fix, Perf, Refactor, Revert, Style, Test"
-          echo "::error::  Feature, Bug fix, Proposal, Breaking change, Other, Other/Misc"
+          echo "::error::  Feature, Bug fix, Proposal, Breaking change, Other/Misc"
           echo "::notice::See the org PR template for guidance: https://github.com/kagenti/.github/blob/main/.github/pull_request_template.md"
