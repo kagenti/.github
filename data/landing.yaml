@@ -58,7 +58,10 @@ components:
   items:
     - title: MCP Gateway
       icon: build
-      description: MCP Gateway is an Envoy-based gateway for connecting agents to tools via the Model Context Protocol (MCP). It provides centralized routing for multiple MCP servers and "virtual MCP servers" that group tools from different sources, enabling precise control over agent tool access and policy enforcement. A Kubernetes-native control plane adds declarative management via custom CRDs, automatic backend discovery through HTTPRoute integration, and Kuadrant support for authorization and token exchange policies.
+      description: |
+        MCP Gateway is an Envoy-based gateway for connecting agents to tools via the Model Context Protocol (MCP). It provides centralized routing for multiple MCP servers and "virtual MCP servers" that group tools from different sources, enabling precise control over agent tool access and policy enforcement. A Kubernetes-native control plane adds declarative management via custom CRDs, automatic backend discovery through HTTPRoute integration, and Kuadrant support for authorization and token exchange policies.
+
+        **Security & Safety Plugins**: The [plugins-adapter](https://github.com/kagenti/plugins-adapter) works with MCP Gateway to provide request/response filtering, content moderation, and policy enforcement for secure AI agent interactions.
       ctaLink:
         text: Learn more
         url: https://github.com/kagenti/mcp-gateway
@@ -89,7 +92,7 @@ blogs:
     - text: |
         Introducing MCP-Gateway: A Unified Front Door for Your MCP Servers
       icon: build
-      
+
     - text: Hands-On Introduction to Agentic AI Concepts with Kagenti
       icon: 123
 
@@ -120,7 +123,7 @@ demos:
   template: image text
 
   title: Demos
- 
+
   list:
     - text: |
         Interactive online demo at KubeCon NA 2025: [Tutorial: Build-a-Bot Workshop: Enabling Trusted Agents With SPIRE + MCP](https://red.ht/3WL5Loc)
