@@ -1,0 +1,35 @@
+# This file has been modified with the assistance of Copilot
+name: PR Verifier (Required)
+
+on:
+  workflow_call: {}
+
+jobs:
+  pr-title-check:
+    # Keep the host repo clean (skipped checks are marked success)
+    if: ${{ github.repository != 'kagenti/.github' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: read
+
+    steps:
+      - name: Enforce PR title prefixes (case-sensitive)
+        uses: deepakputhraya/action-pr-title@v2
+        with:
+          # Union of conventional and template-derived categories
+          allowed_prefixes: >
+            Build,Chore,CI,Docs,Feat,Fix,Perf,Refactor,Revert,Style,Test,
+            Feature,Bug fix,Proposal,Breaking change,Other,Other/Misc
+          prefix_case_sensitive: true
+          min_length: 8
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Helpful error message (only runs when previous step fails)
+        if: failure()
+        run: |
+          echo "::error::PR title must start with one of:"
+          echo "::error::  Build, Chore, Ci, CI, Docs, Feat, Fix, Perf, Refactor, Revert, Style, Test"
+          echo "::error::  Feature, Bug fix, Proposal, Breaking change, Other/Misc"
+          echo "::notice::See the org PR template for guidance: https://github.com/kagenti/.github/blob/main/.github/pull_request_template.md"
