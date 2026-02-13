@@ -33,6 +33,7 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
     github = "https://github.com/orgs/kagenti/repositories"
     discord = "https://discord.gg/aJ92dNDzqB"
     youtube = "https://youtube.com/@Kagenti"
+    email = "mailto:kagenti-maintainers@googlegroups.com"
 
 [menu]
   [[menu.primary]]
