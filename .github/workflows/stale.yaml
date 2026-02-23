@@ -1,0 +1,96 @@
+# Org-wide Stale Issue and PR Management
+#
+# Reusable workflow that marks issues and PRs as stale after a period of
+# inactivity, then closes them after a grace period. Keeps backlogs focused
+# and encourages timely resolution.
+#
+# Usage in caller repos:
+#
+#   # .github/workflows/stale.yaml
+#   name: Stale
+#   on:
+#     schedule:
+#       - cron: '0 6 * * *'
+#     workflow_dispatch:
+#   jobs:
+#     stale:
+#       uses: kagenti/.github/.github/workflows/stale.yaml@main
+#
+# All inputs have sensible defaults. Override only what you need:
+#
+#   uses: kagenti/.github/.github/workflows/stale.yaml@main
+#   with:
+#     days-before-stale: 90
+#     exempt-issue-labels: 'high priority,bug,keep'
+#
+# Reference: https://github.com/actions/stale
+#
+name: Close Stale Issues and PRs
+
+on:
+  workflow_call:
+    inputs:
+      days-before-stale:
+        description: 'Days of inactivity before marking as stale'
+        type: number
+        default: 60
+        required: false
+      days-before-close:
+        description: 'Days after stale label before closing'
+        type: number
+        default: 14
+        required: false
+      exempt-issue-labels:
+        description: 'Comma-separated labels that exempt issues from stale processing'
+        type: string
+        default: 'high priority,bug'
+        required: false
+      exempt-pr-labels:
+        description: 'Comma-separated labels that exempt PRs from stale processing'
+        type: string
+        default: 'high priority'
+        required: false
+      operations-per-run:
+        description: 'Maximum number of operations per run'
+        type: number
+        default: 100
+        required: false
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    name: Mark and Close Stale Items
+    if: ${{ github.repository != 'kagenti/.github' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Process stale issues and PRs
+        uses: actions/stale@5bef64f19d7facfb25b37b414482c7164d639639  # v9.1.0
+        with:
+          days-before-stale: ${{ inputs.days-before-stale }}
+          days-before-close: ${{ inputs.days-before-close }}
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed in ${{ inputs.days-before-close }} days
+            if no further activity occurs. If this issue is still relevant, please
+            comment or remove the stale label.
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not
+            had recent activity. It will be closed in ${{ inputs.days-before-close }} days
+            if no further activity occurs. If this PR is still relevant, please comment
+            or remove the stale label.
+          close-issue-message: >
+            This issue was closed because it has been stale for
+            ${{ inputs.days-before-close }} days with no activity. Feel free to reopen
+            if this is still relevant.
+          close-pr-message: >
+            This pull request was closed because it has been stale for
+            ${{ inputs.days-before-close }} days with no activity. Feel free to reopen
+            if this is still relevant.
+          exempt-issue-labels: ${{ inputs.exempt-issue-labels }}
+          exempt-pr-labels: ${{ inputs.exempt-pr-labels }}
+          operations-per-run: ${{ inputs.operations-per-run }}
