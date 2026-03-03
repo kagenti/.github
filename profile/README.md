@@ -11,6 +11,7 @@ This project consists of following repositories:
 6. **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Extensions and plugins (Go)
 7. **[agentic-control-plane](https://github.com/kagenti/agentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs.
 8. **[plugins-adapter](https://github.com/kagenti/plugins-adapter)** - Adapter for security and safety plugins for Envoy gateways
+9. **[workload-harness](https://github.com/kagenti/workload-harness)** - Tools for agent load generation on the Kagenti platform
 
 Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
 Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
