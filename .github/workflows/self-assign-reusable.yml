@@ -3,6 +3,7 @@
 # Reusable workflow that lets external contributors self-assign issues by
 # commenting a trigger keyword (default: /claim). Uses bdougie/take-action
 # with a PAT to perform the assignment on behalf of non-members.
+# Also supports /unassign to let contributors release an issue.
 #
 # Usage in caller repos:
 #
@@ -71,3 +72,22 @@ jobs:
           blockingLabels: ${{ inputs.blockingLabels }}
           blockingLabelsMessage: 'This issue is currently unavailable. Please choose another issue.'
           trigger: ${{ inputs.trigger }}
+
+  self_unassign:
+    name: Unassign commenter from issue
+    if: ${{ github.repository != 'kagenti/.github' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Unassign commenter from the issue
+        if: >-
+          ${{ github.event.issue != null
+              && startsWith(github.event.comment.body, '/unassign') }}
+        env:
+          GH_TOKEN: ${{ secrets.ISSUE_ASSIGN_TOKEN }}
+        run: |
+          gh issue edit "${{ github.event.issue.number }}" \
+            --repo "${{ github.repository }}" \
+            --remove-assignee "${{ github.event.comment.user.login }}"
