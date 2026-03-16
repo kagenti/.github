@@ -56,6 +56,34 @@ components:
   # subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:
+    - title: Agent Sandbox
+      icon: security
+      description: Agent Sandbox enables skills-driven coding agents to run in Kubernetes with defense-in-depth isolation. It combines kernel-level sandboxing (Landlock LSM + seccomp-BPF), network filtering, credential isolation via AuthBridge, and SPIFFE/SPIRE identity to provide secure execution for autonomous and interactive agent workflows. Supporting any LLM via litellm, it reuses the same CLAUDE.md and skills from local development while ensuring untrusted code cannot compromise the system.
+      ctaLink:
+        text: Learn more
+        url: /docs/components/agent-sandbox
+
+    - title: Benchmarking
+      icon: speed
+      description: Performance benchmarking and testing capabilities for AI agents deployed on Kagenti. Provides comprehensive metrics for response times, throughput, resource utilization, load testing, and agent comparison. Enables teams to evaluate agent output quality, track token usage, and optimize operational costs across different implementations and configurations.
+      ctaLink:
+        text: Learn more
+        url: /docs/components/benchmarking
+
+    - title: Observability
+      icon: visibility
+      description: OpenTelemetry instrumentation following GenAI semantic conventions for comprehensive agent observability. Integrates with MLflow for experiment tracking and Phoenix for LLM debugging, providing detailed traces of agent invocations, LLM calls, tool executions, and token usage. Enables teams to monitor, debug, and optimize agent performance in production with distributed tracing and semantic attributes.
+      ctaLink:
+        text: Learn more
+        url: /docs/components/observability
+
+    - title: Kagenti Lifecycle Operators
+      icon: smart_toy
+      description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
+      ctaLink:
+        text: Learn more
+        url: /docs/components/lifecycle-operators
+
     - title: MCP Gateway
       icon: build
       description: |
@@ -64,21 +92,21 @@ components:
         **Security & Safety Plugins**: The [plugins-adapter](https://github.com/kagenti/plugins-adapter) works with MCP Gateway to provide request/response filtering, content moderation, and policy enforcement for secure AI agent interactions.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/mcp-gateway
+        url: /docs/components/mcp-gateway
 
-    - title: Identity and Authorization Bridge
-      icon: key
+    - title: Agent Identity & Discoverability
+      icon: fingerprint
+      description: Zero-trust identity architecture combining SPIFFE/SPIRE workload identity, OAuth2 token exchange, and Keycloak identity management. Provides secure, scalable, and dynamic authentication for cloud-native AI agents with machine identity management, secure delegation through token exchange, and continuous verification. Replaces static credentials with SPIRE-issued JWTs and ensures least-privilege access across the platform.
+      ctaLink:
+        text: Learn more
+        url: /docs/components/agent-identity
+
+    - title: Security & Access Control
+      icon: shield
       description: Identity and Authorization Bridge includes sidecars that provide identity-based, delegated access control for agents to tools, transparent to agent code. They implement agent identity using SPIFFE/SPIRE, dynamic OAuth client registration, token exchange with fine-grained scoping, and secret retrieval from vault for external tool integration. Together they ensure zero-trust security for agents and allow users to precisely control what agents can do on their behalf.
       ctaLink:
         text: Learn more
-        url: https://github.com/kagenti/kagenti/blob/main/docs/components.md#identity--auth-bridge
-
-    - title: Kagenti Lifecycle Operators
-      icon: smart_toy
-      description: Kagenti Lifecycle Operators automate the deployment and management of AI agents and MCP tools on Kubernetes. The Agent Operator handles agents from container images or source code, while the MCP Tool Operator manages tools via Tool Hive. This streamlines the path from development to production with fast, flexible, and reliable automation.
-      ctaLink:
-        text: Learn more
-        url: https://github.com/kagenti/kagenti/blob/main/docs/components.md#agent-lifecycle-operator
+        url: /docs/components/security-access-control
 
 blogs:
   enable: true

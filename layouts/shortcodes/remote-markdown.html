@@ -1,0 +1,10 @@
+{{ $url := .Get "url" }}
+{{ $resource := resources.GetRemote $url }}
+{{ with $resource }}
+  {{ $content := .Content }}
+  {{/* Remove the first H1 heading (# Title) from the markdown */}}
+  {{ $content = replaceRE `(?m)^# .+\n` "" $content 1 }}
+  {{ $content | markdownify }}
+{{ else }}
+  <p>Error: Unable to fetch content from {{ $url }}</p>
+{{ end }}
