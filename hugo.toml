@@ -37,6 +37,12 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
 
 [menu]
   [[menu.primary]]
+    name  = "Docs"
+    url = "/docs/components/agent-sandbox"
+    identifier = "docs"
+    weight = 5
+
+  [[menu.primary]]
     name  = "Blogs"
     url = "https://medium.com/kagenti-the-agentic-platform"
     identifier = "blogs"

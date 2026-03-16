@@ -1,0 +1,22 @@
+//
+// hero.scss
+//
+
+.classic-hero-image img {
+    max-height: 100px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+@media (max-width:767px) {
+    .classic-hero-image img {
+        max-height: 250px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+.hero {
+    background-size: cover;
+    padding-top: 70px;
+}

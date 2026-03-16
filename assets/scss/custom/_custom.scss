@@ -1,0 +1,15 @@
+/* Custom styles for Kagenti website */
+
+/* Make the hero banner image smaller by constraining height */
+.classic-hero-image img {
+  max-height: 425px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  .classic-hero-image img {
+    max-height: 250px !important;
+  }
+}
