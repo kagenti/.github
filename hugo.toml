@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://kagenti.github.io/.github/'
 languageCode = 'en-us'
 title = 'Kagenti'
 description = 'Kubernetes Agent Platform for AI with secure identity'
@@ -34,6 +34,10 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
     discord = "https://discord.gg/aJ92dNDzqB"
     youtube = "https://youtube.com/@Kagenti"
     email = "mailto:kagenti-maintainers@googlegroups.com"
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-WCXMTW5FYS'
 
 [menu]
   [[menu.primary]]
