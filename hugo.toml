@@ -37,7 +37,7 @@ tags = ['Kubernetes', 'agent', 'workload', 'platform', 'AI', 'LLM']
 
 [services]
   [services.googleAnalytics]
-    ID = 'G-WCXMTW5FYS'
+    ID = 'G-4TPKTBC7BK'
 
 [menu]
   [[menu.primary]]
