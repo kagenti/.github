@@ -1,3 +1,5 @@
 {
-    "wcaForGP.enable": true
+    "wcaForGP.enable": true,
+    "git.enableCommitSigning": true,
+    "git.alwaysSignOff": true
 }
