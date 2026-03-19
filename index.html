@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kagenti — Deploy, Secure, and Govern AI Agents</title>
+  <meta name="description" content="The open-source platform for deploying, securing, and governing AI agents. Kubernetes-native. Framework-neutral. Apache 2.0.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&family=Red+Hat+Mono:wght@400;500&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics — Consent Mode v2                              -->
+  <!-- Replace G-4TPKTBC7BK with your Measurement ID before deploying -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TPKTBC7BK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Deny all cookies by default — updated after explicit user consent below
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', wait_for_update: 500 });
+    gtag('js', new Date());
+    gtag('config', 'G-4TPKTBC7BK', { anonymize_ip: true });
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- BANNER — PHASE: PRE (active through March 22)
+       Swap copy and remove per phases in copy deck. -->
+  <div class="banner" id="event-banner">
+    <div class="container">
+      <p>
+        <strong>Kagenti at KubeCon Europe, Amsterdam</strong><span class="banner-detail"> — 3 sessions, March 23–25.</span>
+        <a href="#events">See what we're presenting →</a>
+      </p>
+      <button class="banner-close" aria-label="Dismiss banner" onclick="dismissBanner()">×</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Kagenti home">
+        <svg viewBox="0 0 250 250" aria-hidden="true" focusable="false">
+          <path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" fill="#ee0000"/>
+        </svg>
+        <span class="logo-wordmark">Kagenti</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#capabilities">Platform</a>
+        <a href="https://github.com/kagenti/kagenti/tree/main/docs" rel="noopener noreferrer">Docs</a>
+        <a href="#community">Community</a>
+        <a href="https://medium.com/kagenti-the-agentic-platform" rel="noopener noreferrer">Blog</a>
+        <a href="#events" class="nav-highlight">KubeCon EU</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/kagenti/kagenti" class="github-link" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.475 2 2 6.475 2 12c0 4.425 2.8625 8.1625 6.8375 9.4875.5.0875.6875-.2125.6875-.475 0-.2375-.0125-.8625-.0125-1.6875-2.5125.4625-3.1625-.6125-3.3625-1.175-.1125-.2875-.6-1.175-1.025-1.4125-.35-.1875-.85-.65-.0125-.6625.7875-.0125 1.35.725 1.5375 1.025.9 1.5125 2.3375 1.0875 2.9125.825.0875-.65.35-1.0875.6375-1.3375-2.225-.25-4.55-1.1125-4.55-4.9375 0-1.0875.3875-1.9875 1.025-2.6875-.1-.25-.45-1.275.1-2.65 0 0 .8375-.2625 2.75 1.025.8-.225 1.65-.3375 2.5-.3375s1.7.1125 2.5.3375c1.9125-1.3 2.75-1.025 2.75-1.025.55 1.375.2 2.4.1 2.65.6375.7 1.025 1.5875 1.025 2.6875 0 3.8375-2.3375 4.6875-4.5625 4.9375.3625.3125.675.9125.675 1.85 0 1.3375-.0125 2.4125-.0125 2.75 0 .2625.1875.575.6875.475C19.1375 20.1625 22 16.425 22 12c0-5.525-4.475-10-10-10z"/>
+          </svg>
+          <span>GitHub</span>
+          <span class="star-count" id="nav-star-count">110 ★</span>
+        </a>
+        <a href="talk-to-us.html" class="btn btn-primary" data-track="request-demo">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-tagline">The open-source platform<br class="hero-br"> for deploying, securing,<br class="hero-br"> and governing AI agents.</h1>
+        <p class="hero-sub">Govern agents your teams already use. Deploy new agents on the same platform. Secure everything with zero-trust identity.</p>
+        <div class="hero-ctas">
+          <a href="https://github.com/kagenti/kagenti" class="btn btn-primary" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.475 2 2 6.475 2 12c0 4.425 2.8625 8.1625 6.8375 9.4875.5.0875.6875-.2125.6875-.475 0-.2375-.0125-.8625-.0125-1.6875-2.5125.4625-3.1625-.6125-3.3625-1.175-.1125-.2875-.6-1.175-1.025-1.4125-.35-.1875-.85-.65-.0125-.6625.7875-.0125 1.35.725 1.5375 1.025.9 1.5125 2.3375 1.0875 2.9125.825.0875-.65.35-1.0875.6375-1.3375-2.225-.25-4.55-1.1125-4.55-4.9375 0-1.0875.3875-1.9875 1.025-2.6875-.1-.25-.45-1.275.1-2.65 0 0 .8375-.2625 2.75 1.025.8-.225 1.65-.3375 2.5-.3375s1.7.1125 2.5.3375c1.9125-1.3 2.75-1.025 2.75-1.025.55 1.375.2 2.4.1 2.65.6375.7 1.025 1.5875 1.025 2.6875 0 3.8375-2.3375 4.6875-4.5625 4.9375.3625.3125.675.9125.675 1.85 0 1.3375-.0125 2.4125-.0125 2.75 0 .2625.1875.575.6875.475C19.1375 20.1625 22 16.425 22 12c0-5.525-4.475-10-10-10z"/></svg>
+            View on GitHub
+          </a>
+          <a href="talk-to-us.html" class="btn btn-ghost" data-track="request-demo">Request a Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PLATFORM CAPABILITIES
+         ================================================================ -->
+    <section class="capabilities" id="capabilities">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-header">Open-source infrastructure built<br />on the stack you already run.</h2>
+          <a href="https://github.com/kagenti/kagenti#architecture" class="btn btn-ghost" rel="noopener noreferrer">Architecture overview →</a>
+        </div>
+
+        <div class="component-grid">
+
+          <div class="component-card">
+            <div class="component-card-meta">Kagenti UI · React · FastAPI</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/components.md" rel="noopener noreferrer">Control plane</a></h3>
+            <p>The unified operational interface across all platform pillars. Import agents and tools, run interactive tests, monitor deployments, and manage platform state from a single web-based interface.</p>
+          </div>
+
+          <div class="component-card">
+            <div class="component-card-meta">A2A · MCP · Kubernetes</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/new-agent.md" rel="noopener noreferrer">Workload runtime</a></h3>
+            <p>Agents run as framework-neutral Kubernetes workloads over the A2A protocol. Tools run as MCP servers. LangGraph, CrewAI, and AG2 supported without agent code modifications.</p>
+          </div>
+
+          <div class="component-card">
+            <div class="component-card-meta">AgentCard · Shipwright · Kubernetes</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/components.md" rel="noopener noreferrer">Lifecycle orchestration</a></h3>
+            <p>Kubernetes operators manage workload lifecycle and scaling. AgentCard CRDs index deployed agents automatically — no external registry required. Shipwright builds images from source.</p>
+          </div>
+
+          <div class="component-card">
+            <div class="component-card-meta">MCP Gateway · Istio Ambient · Gateway API</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/gateway.md" rel="noopener noreferrer">Networking</a></h3>
+            <p>MCP Gateway routes tool calls and handles protocol translation. Istio Ambient provides service mesh networking and mTLS between all workloads. Gateway API manages ingress and routing.</p>
+          </div>
+
+          <div class="component-card">
+            <div class="component-card-meta">AuthBridge · SPIRE · Keycloak · Envoy</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/identity-guide.md" rel="noopener noreferrer">Security</a></h3>
+            <p>AuthBridge injects zero-trust workload identity and JWT enforcement at deploy time. SPIRE issues cryptographic workload identities; Keycloak manages OAuth2 token scoping and validation.</p>
+          </div>
+
+          <div class="component-card">
+            <div class="component-card-meta">Kiali · Phoenix</div>
+            <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/tech-details.md" rel="noopener noreferrer">Observability</a></h3>
+            <p>Kiali visualizes service mesh traffic flows, mTLS status, and service dependencies. Phoenix traces agent steps, tool calls, and model interactions end-to-end.</p>
+          </div>
+
+        </div>
+
+        <div class="oss-shelf">
+          <p>Don't see your framework or protocol? Kagenti is built to extend.</p>
+          <a href="https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md" class="btn btn-ghost" rel="noopener noreferrer">Contribute an integration →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         GET UP AND RUNNING
+         ================================================================ -->
+    <section class="code-section" id="getting-started">
+      <div class="container">
+        <div class="htabs">
+          <div class="code-panel-inner">
+            <div class="code-prose">
+              <h2>Install the platform.<br class="hero-br"> Own the lifecycle.</h2>
+              <p>Ansible-automated. OpenShift, upstream Kubernetes, or Kind. Security and observability are configured from first deployment, not added later.</p>
+              <a href="https://github.com/kagenti/kagenti/blob/main/docs/install.md" class="btn btn-ghost" rel="noopener noreferrer">Quickstart guide →</a>
+            </div>
+            <div class="code-blocks">
+              <div class="code-block">
+                <div class="code-block-header">
+                  <span>bash</span>
+                  <span>cluster install</span>
+                </div>
+                <pre><code><span class="cc"># Clone the repo</span>
+<span class="cmd">git clone</span> https://github.com/kagenti/kagenti.git
+<span class="cmd">cd</span> kagenti
+
+<span class="cc"># Configure secrets (edit with your GitHub token, API keys, etc.)</span>
+<span class="cmd">cp</span> deployments/envs/secret_values.yaml.example \
+   deployments/envs/.secret_values.yaml
+
+<span class="cc"># Install on Kind (dev) or OpenShift (--env ocp)</span>
+deployments/ansible/run-install.sh <span class="key">--env</span> <span class="val">dev</span>
+
+<span class="cc"># Open the Kagenti dashboard</span>
+<span class="cmd">open</span> http://kagenti-ui.localtest.me:8080</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI gif placeholder -->
+        <div class="ui-preview">
+          <div class="ui-preview-chrome">
+            <span class="ui-chrome-dot" aria-hidden="true"></span>
+            <span class="ui-chrome-dot" aria-hidden="true"></span>
+            <span class="ui-chrome-dot" aria-hidden="true"></span>
+            <span class="ui-preview-label">Deploy and manage AI agents with Kagenti</span>
+          </div>
+          <div class="ui-preview-body">
+            <picture>
+              <source srcset="img/kagenti-ui-dark.png" media="(prefers-color-scheme: dark)">
+              <img src="img/kagenti-ui-light.png" alt="Kagenti dashboard: agent and tool management interface" width="1280" height="633" loading="lazy">
+            </picture>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         USE CASES / DEMOS — Carousel
+         ================================================================ -->
+    <section class="use-cases" id="demos" aria-labelledby="demos-heading">
+      <div class="container">
+        <h2 id="demos-heading" class="visually-hidden">Demo examples</h2>
+        <div class="demo-carousel">
+
+          <!-- ── Nav ───────────────────────────────────────────────── -->
+          <div class="demo-nav" role="tablist" aria-label="Demo examples">
+            <button class="demo-nav-btn active" role="tab" aria-selected="true" id="tab-github-issue" aria-controls="panel-github-issue" data-slide="github-issue">
+              <span class="demo-nav-icon">
+                <!-- Lucide plug-2 — MIT https://lucide.dev — placeholder for official MCP logo -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M12 17v5"/><path d="M5 8h14"/><path d="M6 11V8h12v3a6 6 0 1 1-12 0Z"/></svg>
+              </span>
+              <span class="demo-nav-label">Secure MCP Gateway</span>
+            </button>
+            <button class="demo-nav-btn" role="tab" aria-selected="false" id="tab-weather" aria-controls="panel-weather" data-slide="weather">
+              <span class="demo-nav-icon">
+                <!-- Lucide shield-check — MIT https://lucide.dev -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <span class="demo-nav-label">Zero-trust Security</span>
+            </button>
+            <button class="demo-nav-btn" role="tab" aria-selected="false" id="tab-slack" aria-controls="panel-slack" data-slide="slack">
+              <span class="demo-nav-icon">
+                <!-- Lucide refresh-cw — MIT https://lucide.dev -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              </span>
+              <span class="demo-nav-label">Lifecycle Automation</span>
+            </button>
+          </div>
+
+          <!-- ── Slides ────────────────────────────────────────────── -->
+
+          <!-- Slide 1: GitHub Issue Agent (MCP) -->
+          <div class="demo-slide active" role="tabpanel" id="panel-github-issue" aria-labelledby="tab-github-issue" data-slide="github-issue">
+            <div class="demo-slide-inner demo-slide-inner--code">
+              <div class="demo-slide-prose">
+                <span class="label" aria-hidden="true">Demo: GitHub Issue Agent</span>
+                <h3>Connect any tool with a secure MCP gateway.</h3>
+                <p>The GitHub Issue Agent reads and files issues through a Kagenti MCP tool server. Point the agent at the MCP endpoint; the gateway handles routing and protocol. Swap or update the tool without touching agent code.</p>
+                <ul>
+                  <li>MCP tool server runs as a separate service; agent connects via a single env var</li>
+                  <li>Gateway handles routing, protocol translation, and token exchange for every tool call</li>
+                  <li>Replace or upgrade tools by updating one URL — no agent rebuild required</li>
+                </ul>
+                <a href="https://github.com/kagenti/kagenti-extensions/blob/main/AuthBridge/demos/github-issue/demo.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
+              </div>
+              <div class="demo-slide-code">
+                <a href="https://www.youtube.com/watch?v=5SpTwERN2jU" class="demo-video" rel="noopener noreferrer" aria-label="Watch tutorial: GitHub Issue Agent with Kagenti MCP Gateway on YouTube">
+                  <div class="demo-video-thumb">
+                    <img src="img/yt-github-issue-agent.jpg" alt="" width="480" height="270" loading="lazy">
+                    <div class="demo-video-play" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <span class="demo-video-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    Watch the tutorial
+                  </span>
+                </a>
+                <div class="demo-code" hidden>
+                  <div class="demo-code-header">
+                    <span>bash</span>
+                    <span>wire agent to MCP tool server</span>
+                  </div>
+                  <pre><code><span class="dk"># Point the agent at the MCP tool server</span>
+kubectl set env deployment/git-issue-agent -n team1 -c agent \
+  MCP_URL=<span class="str">"http://github-tool-mcp:9090/mcp"</span>
+
+<span class="dk"># Verify the MCP tool is reachable</span>
+kubectl run test-mcp --image=curlimages/curl -n team1 \
+  --restart=Never --rm -it -- \
+  curl -s -o /dev/null -w <span class="str">"%{http_code}"</span> \
+  http://github-tool-mcp:9090/mcp
+<span class="dk"># 200</span></code></pre>
+                </div>
+                <div class="demo-code" hidden>
+                  <div class="demo-code-header">
+                    <span>bash</span>
+                    <span>agent calls GitHub via MCP</span>
+                  </div>
+                  <pre><code><span class="dk"># Send a task to the agent over A2A</span>
+curl -s -H <span class="str">"Authorization: Bearer $TOKEN"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -X POST http://git-issue-agent:8080/ \
+  -d <span class="str">'{"jsonrpc":"2.0","id":"1","method":"message/send",
+    "params":{"message":{"role":"user","messageId":"msg-001",
+    "parts":[{"type":"text","text":
+    "List open issues in kagenti/kagenti"}]}}}'</span> | jq</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Weather Service Agent -->
+          <div class="demo-slide" role="tabpanel" id="panel-weather" aria-labelledby="tab-weather" data-slide="weather" hidden>
+            <div class="demo-slide-inner demo-slide-inner--code">
+              <div class="demo-slide-prose">
+                <span class="label" aria-hidden="true">Demo: Weather Service Agent</span>
+                <h3>Enforce zero-trust identity with AuthBridge.</h3>
+                <p>AuthBridge injects zero-trust identity and auth enforcement into any agent at deploy time. The Weather Service Agent gets a Keycloak identity, JWT validation, and proxy enforcement — without writing a line of auth code.</p>
+                <ul>
+                  <li>SPIFFE identity and Keycloak registration provisioned at deploy</li>
+                  <li>Inbound requests validated at the Envoy proxy — invalid tokens never reach agent code</li>
+                  <li>AuthBridge adds 3 sidecars; the agent container is unmodified</li>
+                </ul>
+                <a href="https://github.com/kagenti/kagenti-extensions/blob/main/AuthBridge/demos/weather-agent/demo-ui.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
+              </div>
+              <div class="demo-slide-code">
+                <div class="demo-code">
+                  <div class="demo-code-header">
+                    <span>bash</span>
+                    <span>deploy + verify</span>
+                  </div>
+                  <pre><code><span class="dk"># Provision the agent's Keycloak identity</span>
+python demos/webhook/setup_keycloak.py \
+  --namespace team1 \
+  --service-account weather-service
+
+<span class="dk"># 3 AuthBridge sidecars + agent = 4/4 containers</span>
+kubectl get pods -n team1
+<span class="dk"># weather-service-xxx   4/4   Running
+# weather-tool-xxx      1/1   Running</span>
+
+<span class="dk"># Proxy enforces auth — agent code never sees this request</span>
+curl http://weather-service:8080/
+<span class="dk"># {"error": "Unauthorized"}  ← 401, no token</span>
+curl -H <span class="str">"Authorization: Bearer $TOKEN"</span> \
+     http://weather-service:8080/
+<span class="dk"># {"forecast": ...}  ← 200, token valid</span></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Slack Research Agent -->
+          <div class="demo-slide" role="tabpanel" id="panel-slack" aria-labelledby="tab-slack" data-slide="slack" hidden>
+            <div class="demo-slide-inner demo-slide-inner--code">
+              <div class="demo-slide-prose">
+                <span class="label" aria-hidden="true">Demo: Slack Research Agent</span>
+                <h3>Deploy and manage agents through the Kagenti dashboard.</h3>
+                <p>The Slack Research Agent and its Slack MCP tool are imported and managed through the Kagenti UI. The platform provisions workloads, wires tool connections, and configures auth — no manifest authoring required.</p>
+                <ul>
+                  <li>Import agent and tool through the dashboard; platform handles deployment</li>
+                  <li>Keycloak access policies configured with a single setup script</li>
+                  <li>Monitor running deployments and logs with standard kubectl</li>
+                </ul>
+                <a href="https://github.com/kagenti/kagenti/blob/main/docs/demos/demo-slack-research-agent.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
+              </div>
+              <div class="demo-slide-code">
+                <div class="demo-code">
+                  <div class="demo-code-header">
+                    <span>bash</span>
+                    <span>configure auth + verify</span>
+                  </div>
+                  <pre><code><span class="dk"># After importing agent and tool via the UI,
+# configure Keycloak access policies</span>
+cd kagenti/auth/auth_demo
+python set_up_slack_demo.py
+
+<span class="dk"># Verify agent and tool are running</span>
+kubectl get pods -n &lt;namespace&gt;
+<span class="dk"># slack-researcher-xxx   1/1   Running
+# slack-tool-xxx         1/1   Running</span>
+
+<span class="dk"># Tail agent logs</span>
+kubectl logs -f deployment/slack-researcher -n &lt;namespace&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ROADMAP & COMMUNITY
+         ================================================================ -->
+    <section class="community" id="community">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-header">Roadmap &amp; Community</h2>
+          <a href="https://github.com/orgs/kagenti/projects/8" class="btn btn-ghost" rel="noopener noreferrer">View project board →</a>
+        </div>
+
+        <div class="community-cols">
+
+          <div class="community-col">
+            <h3 class="community-col-label">Become a contributor</h3>
+            <p>We're building in public and want to hear from platform engineers, security teams, and AI infrastructure builders. Start a thread on <a href="https://github.com/kagenti/kagenti/discussions" rel="noopener noreferrer">GitHub Discussions</a> or find us on <a href="https://discord.gg/aJ92dNDzqB" rel="noopener noreferrer">Discord</a>.</p>
+            <h3 class="community-col-label">Contributors</h3>
+            <div class="contributor-avatars">
+            <a href="https://github.com/pdettori" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/6678093?v=4&s=48" alt="pdettori" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/Ladas" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/1737058?v=4&s=48" alt="Ladas" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/mrsabath" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/6954688?v=4&s=48" alt="mrsabath" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/maia-iyer" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/30640956?v=4&s=48" alt="maia-iyer" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/evaline-ju" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/69598118?v=4&s=48" alt="evaline-ju" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/Alan-Cha" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/14318081?v=4&s=48" alt="Alan-Cha" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/cwiklik" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/6466066?v=4&s=48" alt="cwiklik" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/rubambiza" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/11816517?v=4&s=48" alt="rubambiza" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/esnible" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/3237651?v=4&s=48" alt="esnible" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/RyanJenkins99" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/90774128?v=4&s=48" alt="RyanJenkins99" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/huang195" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/8008677?v=4&s=48" alt="huang195" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/d0w" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/28515283?v=4&s=48" alt="d0w" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/cooktheryan" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/3812500?v=4&s=48" alt="cooktheryan" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/usize" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/39788015?v=4&s=48" alt="usize" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/EthanL3" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/101854509?v=4&s=48" alt="EthanL3" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/ChristianZaccaria" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/73656840?v=4&s=48" alt="ChristianZaccaria" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/kellyaa" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/9578389?v=4&s=48" alt="kellyaa" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/pzhao0" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/42500800?v=4&s=48" alt="pzhao0" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/yenayuu" rel="noopener noreferrer"><img src="https://avatars.githubusercontent.com/u/160572629?v=4&s=48" alt="yenayuu" width="36" height="36" loading="lazy"></a>
+            <a href="https://github.com/kagenti/kagenti/graphs/contributors" class="contributor-all-link" rel="noopener noreferrer">See all →</a>
+          </div>
+          </div>
+
+          <div class="community-col">
+            <h3 class="community-col-label">What's next</h3>
+            <p>The next phase of Kagenti is built around persistent, long-running agents — agents that maintain context across sessions and operate autonomously over time, like <a href="https://github.com/openclaw/openclaw" rel="noopener noreferrer">OpenClaw</a>.</p>
+            <p>Getting there means building the right foundations. We're working on the core pieces: memory, sandboxing, an Agent Development Kit, and improved developer experience.</p>
+            <p><a href="https://github.com/kagenti/kagenti/discussions" rel="noopener noreferrer">Become a contributor →</a></p>
+          </div>
+
+        </div><!-- /.community-cols -->
+
+        <div class="oss-shelf">
+          <p>Open-source infrastructure you can audit, fork, and trust.</p>
+          <span class="oss-meta" id="oss-meta"><span id="oss-stars">110</span> stars &thinsp;·&thinsp; <span id="oss-forks">59</span> forks &thinsp;·&thinsp; <span id="oss-contributors">30</span> contributors &thinsp;·&thinsp; Apache 2.0</span>
+          <a href="https://github.com/kagenti/kagenti" class="btn btn-ghost" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.475 2 2 6.475 2 12c0 4.425 2.8625 8.1625 6.8375 9.4875.5.0875.6875-.2125.6875-.475 0-.2375-.0125-.8625-.0125-1.6875-2.5125.4625-3.1625-.6125-3.3625-1.175-.1125-.2875-.6-1.175-1.025-1.4125-.35-.1875-.85-.65-.0125-.6625.7875-.0125 1.35.725 1.5375 1.025.9 1.5125 2.3375 1.0875 2.9125.825.0875-.65.35-1.0875.6375-1.3375-2.225-.25-4.55-1.1125-4.55-4.9375 0-1.0875.3875-1.9875 1.025-2.6875-.1-.25-.45-1.275.1-2.65 0 0 .8375-.2625 2.75 1.025.8-.225 1.65-.3375 2.5-.3375s1.7.1125 2.5.3375c1.9125-1.3 2.75-1.025 2.75-1.025.55 1.375.2 2.4.1 2.65.6375.7 1.025 1.5875 1.025 2.6875 0 3.8375-2.3375 4.6875-4.5625 4.9375.3625.3125.675.9125.675 1.85 0 1.3375-.0125 2.4125-.0125 2.75 0 .2625.1875.575.6875.475C19.1375 20.1625 22 16.425 22 12c0-5.525-4.475-10-10-10z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         OPEN ENTERPRISE
+         ================================================================ -->
+    <section class="open-enterprise" id="open-enterprise">
+      <div class="container">
+        <h2 class="section-header">Enterprise-ready.<br />No vendor required.</h2>
+        <p class="oe-sub">No feature gating, no proprietary runtime dependencies, no vendor control over your production infrastructure.<br><br>Enterprise deployment, lifecycle management, and operational support for organizations that need it.</p>
+        <div class="oe-ctas">
+          <a href="talk-to-us.html" class="btn btn-primary" data-track="request-demo">Request a Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CREDENTIALS
+         ================================================================ -->
+    <section class="credentials" id="events">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-header">Kagenti at KubeCon EU 2026, Amsterdam.</h2>
+          <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/" class="btn btn-ghost" rel="noopener noreferrer">View schedule →</a>
+        </div>
+
+        <div class="credentials-grid">
+
+          <div class="credential-block featured">
+            <h3>Agentics Day</h3>
+            <p><strong>Keeping Your Agents in Check: Layered Security for Agentic Platforms in Production.</strong></p>
+            <p class="cred-meta">March 23 · 3:55–4:20 PM<br>Hall 7 | Room A</p>
+            <a href="https://colocatedeventseu2026.sched.com/event/2DY7P/keeping-your-agents-in-check-layered-security-for-agentic-platforms-in-production-evaline-ju-ibm-research-kelly-abuelsaad-ibm?iframe=no" class="cred-link" rel="noopener noreferrer">Session details →</a>
+          </div>
+
+          <div class="credential-block">
+            <h3>Talk · AI + ML</h3>
+            <p><strong>When an Agent Acts on Your Behalf, Who Holds the Keys?</strong></p>
+            <p class="cred-meta">March 24 · 11:15–11:45 AM<br>Auditorium</p>
+            <a href="https://kccnceu2026.sched.com/event/2CVxt" class="cred-link" rel="noopener noreferrer">Session details →</a>
+          </div>
+
+          <div class="credential-block">
+            <h3>Talk · Connectivity</h3>
+            <p><strong>Agentic Networking: Securing AI Agents on Kubernetes.</strong></p>
+            <p class="cred-meta">March 25 · 5:30–6:00 PM<br>Elicium 1</p>
+            <a href="https://kccnceu2026.sched.com/event/2CW5O" class="cred-link" rel="noopener noreferrer">Session details →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo" aria-label="Kagenti home">
+            <svg viewBox="0 0 250 250" aria-hidden="true" focusable="false">
+              <path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" fill="rgba(249,249,247,0.5)"/>
+            </svg>
+            <span class="logo-wordmark">Kagenti</span>
+          </a>
+          <p>The open-source platform for deploying, securing, and governing AI agents.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="https://github.com/kagenti/kagenti#architecture" rel="noopener noreferrer">Architecture</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/identity-guide.md" rel="noopener noreferrer">Security Model</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/gateway.md" rel="noopener noreferrer">MCP Gateway</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/identity-guide.md" rel="noopener noreferrer">Identity Bridge</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/components.md" rel="noopener noreferrer">Lifecycle Operators</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <ul>
+            <li><a href="https://github.com/kagenti/kagenti#quick-start" rel="noopener noreferrer">Quickstart</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/dev-guide.md" rel="noopener noreferrer">Dev Guide</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/new-agent.md" rel="noopener noreferrer">Deploy an Agent</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/docs/install.md" rel="noopener noreferrer">Deployment Guide</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/tree/main/docs/demos" rel="noopener noreferrer">Example Agents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/kagenti/kagenti" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://discord.gg/aJ92dNDzqB" rel="noopener noreferrer">Discord</a></li>
+            <li><a href="https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">Contributing</a></li>
+            <li><a href="https://github.com/orgs/kagenti/projects/8" rel="noopener noreferrer">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://medium.com/kagenti-the-agentic-platform" rel="noopener noreferrer">Blog</a></li>
+            <!-- Remove after March 26 -->
+            <li><a href="#events" class="footer-highlight">KubeCon EU 2026</a></li>
+            <li><a href="talk-to-us.html">Request a Demo</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>Kagenti is an open-source project.</p>
+        <div class="footer-bottom-links">
+          <a href="https://github.com/kagenti/kagenti" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/kagenti/kagenti/blob/main/LICENSE" rel="noopener noreferrer">Apache License</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="#" id="cookie-manage-link">Analytics preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Analytics consent bar — shown only when no preference is stored -->
+  <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Analytics consent" hidden>
+    <div class="container cookie-bar-inner">
+      <p class="cookie-bar-text">
+        We use Google Analytics cookies to understand how visitors use this site.
+        <a href="privacy.html" class="cookie-bar-link">Privacy policy</a>
+      </p>
+      <div class="cookie-bar-actions">
+        <button class="btn btn-ghost btn-sm" id="cookie-decline">Decline</button>
+        <button class="btn btn-primary btn-sm" id="cookie-accept">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var REPO = 'kagenti/kagenti';
+      var CACHE_KEY = 'kagenti-gh-stats';
+      var CACHE_TTL = 3600000; // 1 hour
+
+      function apply(data) {
+        var nav = document.getElementById('nav-star-count');
+        if (nav && data.stars != null) nav.textContent = data.stars + ' \u2605';
+        var s = document.getElementById('oss-stars');
+        if (s && data.stars != null) s.textContent = data.stars;
+        var f = document.getElementById('oss-forks');
+        if (f && data.forks != null) f.textContent = data.forks;
+        var c = document.getElementById('oss-contributors');
+        if (c && data.contributors != null) c.textContent = data.contributors;
+      }
+
+      try {
+        var cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+        if (cached && Date.now() - cached.ts < CACHE_TTL) { apply(cached); return; }
+      } catch (e) {}
+
+      fetch('https://api.github.com/repos/' + REPO)
+        .then(function (r) { return r.json(); })
+        .then(function (repo) {
+          var data = { stars: repo.stargazers_count, forks: repo.forks_count, ts: Date.now() };
+          return fetch('https://api.github.com/repos/' + REPO + '/contributors?per_page=1&anon=true', { method: 'HEAD' })
+            .then(function (r) {
+              var link = r.headers.get('link') || '';
+              var match = link.match(/page=(\d+)>;\s*rel="last"/);
+              data.contributors = match ? parseInt(match[1], 10) : null;
+              return data;
+            })
+            .catch(function () { return data; });
+        })
+        .then(function (data) {
+          apply(data);
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (e) {}
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
+</html>
