@@ -48,7 +48,7 @@ There are two primary CTAs, used consistently throughout:
 - **View on GitHub:** Top of funnel. For engineers who need to evaluate the code before engaging further.
 - **Talk to Us:** Bottom of funnel. Links to `talk-to-us.html`, a minimal contact page that routes to email and Discord.
 
-CTA links carry a `data-track` attributes wired to GA4 events in `script.js`.
+CTA links carry a `data-track` attribute wired to GA4 events in `script.js`.
 
 ## Analytics
 
@@ -64,7 +64,7 @@ Google Analytics 4 is implemented with Consent Mode v2. Analytics are off by def
 | `banner_dismiss` | Click the banner close button |
 | `kubecon_link_click` | Click on any KubeCon session or schedule link |
 
-Replace the `G-XXXXXXXXXX` placeholder in `index.html` (two instances) with the real GA4 Measurement ID before deploying.
+Ensure the `G-XXXXXXXXXX` ID in `index.html` (two instances) matches the real GA4 Measurement ID before deploying.
 
 ## Event-Driven Content
 

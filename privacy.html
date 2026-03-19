@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Kagenti</title>
-  <meta name="description" content="Privacy policy for kagenti.io.">
+  <meta name="description" content="Privacy policy for Kagenti.io.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,7 @@
         <svg viewBox="0 0 250 250" aria-hidden="true" focusable="false">
           <path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" fill="#ee0000"/>
         </svg>
-        <span class="logo-wordmark">kagenti</span>
+        <span class="logo-wordmark">Kagenti</span>
       </a>
       <div style="margin-left: auto;">
         <a href="index.html" style="font-size: 0.875rem; color: var(--c-muted); text-decoration: none;">← Back to site</a>
@@ -92,7 +92,7 @@
           <span class="pp-updated">Last updated: March 2026</span>
 
           <p>
-            This policy describes how kagenti.io collects and uses information when you visit this website.
+            This policy describes how Kagenti.io collects and uses information when you visit this website.
             Kagenti is an open-source project. This site is a marketing and documentation resource — it does not
             offer accounts, process payments, or collect personal information through forms.
           </p>
@@ -117,23 +117,36 @@
             If you decline analytics cookies, no tracking cookies are set and no usage data is sent to Google.
           </p>
 
-          <h2>Cookies</h2>
+          <h2>Browser storage</h2>
           <p>
-            This site uses one first-party cookie to store your cookie consent preference
-            (<code>kagenti-cookie-consent</code>, stored in <code>localStorage</code>).
-            If you accept analytics, Google Analytics sets its own cookies (<code>_ga</code>, <code>_ga_*</code>)
+            This site does not set any first-party cookies. It uses your browser's
+            <code>localStorage</code> and <code>sessionStorage</code> to store small, non-personal values
+            that never leave your browser and are not sent with HTTP requests:
+          </p>
+          <ul>
+            <li><code>kagenti-cookie-consent</code> — your analytics consent preference (<code>localStorage</code>)</li>
+            <li><code>kagenti-banner-dismissed</code> — whether you dismissed the event banner (<code>sessionStorage</code>, cleared when the tab closes)</li>
+            <li><code>kagenti-gh-stats</code> — cached GitHub repository statistics (<code>localStorage</code>, refreshed hourly)</li>
+          </ul>
+
+          <h2>Analytics cookies</h2>
+          <p>
+            If you accept analytics, Google Analytics sets third-party cookies (<code>_ga</code>, <code>_ga_*</code>)
             to distinguish visitors and sessions. These cookies expire after 2 years.
+            No analytics cookies are set unless you explicitly consent.
           </p>
           <p>
             You can change your preference at any time using the
-            <a href="#" id="pp-cookie-manage-link">Cookie preferences</a> link in the site footer,
-            or by clearing your browser's local storage.
+            <a href="#" id="pp-cookie-manage-link">Analytics preferences</a> link in the site footer,
+            or by clearing your browser storage.
           </p>
 
           <h2>Legal basis (GDPR)</h2>
           <p>
-            Analytics cookies are processed on the basis of your explicit consent (Article 6(1)(a) GDPR).
-            You are free to decline without any loss of functionality on this site.
+            Google Analytics cookies are processed on the basis of your explicit consent (Article 6(1)(a) GDPR).
+            Browser storage entries listed above are used for site functionality and do not require consent
+            under the ePrivacy Directive, as they are strictly necessary for features you have requested.
+            You are free to decline analytics without any loss of functionality on this site.
           </p>
 
           <h2>Data processor</h2>

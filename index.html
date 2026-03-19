@@ -62,7 +62,7 @@
             <path d="M12 2C6.475 2 2 6.475 2 12c0 4.425 2.8625 8.1625 6.8375 9.4875.5.0875.6875-.2125.6875-.475 0-.2375-.0125-.8625-.0125-1.6875-2.5125.4625-3.1625-.6125-3.3625-1.175-.1125-.2875-.6-1.175-1.025-1.4125-.35-.1875-.85-.65-.0125-.6625.7875-.0125 1.35.725 1.5375 1.025.9 1.5125 2.3375 1.0875 2.9125.825.0875-.65.35-1.0875.6375-1.3375-2.225-.25-4.55-1.1125-4.55-4.9375 0-1.0875.3875-1.9875 1.025-2.6875-.1-.25-.45-1.275.1-2.65 0 0 .8375-.2625 2.75 1.025.8-.225 1.65-.3375 2.5-.3375s1.7.1125 2.5.3375c1.9125-1.3 2.75-1.025 2.75-1.025.55 1.375.2 2.4.1 2.65.6375.7 1.025 1.5875 1.025 2.6875 0 3.8375-2.3375 4.6875-4.5625 4.9375.3625.3125.675.9125.675 1.85 0 1.3375-.0125 2.4125-.0125 2.75 0 .2625.1875.575.6875.475C19.1375 20.1625 22 16.425 22 12c0-5.525-4.475-10-10-10z"/>
           </svg>
           <span>GitHub</span>
-          <span class="star-count">110 ★</span>
+          <span class="star-count" id="nav-star-count">110 ★</span>
         </a>
         <a href="talk-to-us.html" class="btn btn-primary" data-track="request-demo">Request a Demo</a>
       </div>
@@ -109,7 +109,7 @@
           <div class="component-card">
             <div class="component-card-meta">A2A · MCP · Kubernetes</div>
             <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/new-agent.md" rel="noopener noreferrer">Workload runtime</a></h3>
-            <p>Agents run as framework-neutral Kubernetes workloads over the A2A protocol. Tools run as MCP servers. LangGraph, CrewAI, AG2, Llama Stack, and BeeAI supported without agent code modifications.</p>
+            <p>Agents run as framework-neutral Kubernetes workloads over the A2A protocol. Tools run as MCP servers. LangGraph, CrewAI, and AG2 supported without agent code modifications.</p>
           </div>
 
           <div class="component-card">
@@ -253,7 +253,7 @@ deployments/ansible/run-install.sh <span class="key">--env</span> <span class="v
               <div class="demo-slide-code">
                 <a href="https://www.youtube.com/watch?v=5SpTwERN2jU" class="demo-video" rel="noopener noreferrer" aria-label="Watch tutorial: GitHub Issue Agent with Kagenti MCP Gateway on YouTube">
                   <div class="demo-video-thumb">
-                    <img src="https://img.youtube.com/vi/5SpTwERN2jU/maxresdefault.jpg" alt="" width="480" height="270" loading="lazy">
+                    <img src="img/yt-github-issue-agent.jpg" alt="" width="480" height="270" loading="lazy">
                     <div class="demo-video-play" aria-hidden="true">
                       <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -421,7 +421,7 @@ kubectl logs -f deployment/slack-researcher -n &lt;namespace&gt;</code></pre>
 
           <div class="community-col">
             <h3 class="community-col-label">What's next</h3>
-            <p>The next phase of Kagenti is built around persistent, long-running agents — agents that maintain context across sessions and operate autonomously over time, like OpenClaw.</p>
+            <p>The next phase of Kagenti is built around persistent, long-running agents — agents that maintain context across sessions and operate autonomously over time, like <a href="https://github.com/openclaw/openclaw" rel="noopener noreferrer">OpenClaw</a>.</p>
             <p>Getting there means building the right foundations. We're working on the core pieces: memory, sandboxing, an Agent Development Kit, and improved developer experience.</p>
             <p><a href="https://github.com/kagenti/kagenti/discussions" rel="noopener noreferrer">Become a contributor →</a></p>
           </div>
@@ -430,7 +430,7 @@ kubectl logs -f deployment/slack-researcher -n &lt;namespace&gt;</code></pre>
 
         <div class="oss-shelf">
           <p>Open-source infrastructure you can audit, fork, and trust.</p>
-          <span class="oss-meta">110 stars &thinsp;·&thinsp; 59 forks &thinsp;·&thinsp; 30 contributors &thinsp;·&thinsp; Apache 2.0</span>
+          <span class="oss-meta" id="oss-meta"><span id="oss-stars">110</span> stars &thinsp;·&thinsp; <span id="oss-forks">59</span> forks &thinsp;·&thinsp; <span id="oss-contributors">30</span> contributors &thinsp;·&thinsp; Apache 2.0</span>
           <a href="https://github.com/kagenti/kagenti" class="btn btn-ghost" rel="noopener noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.475 2 2 6.475 2 12c0 4.425 2.8625 8.1625 6.8375 9.4875.5.0875.6875-.2125.6875-.475 0-.2375-.0125-.8625-.0125-1.6875-2.5125.4625-3.1625-.6125-3.3625-1.175-.1125-.2875-.6-1.175-1.025-1.4125-.35-.1875-.85-.65-.0125-.6625.7875-.0125 1.35.725 1.5375 1.025.9 1.5125 2.3375 1.0875 2.9125.825.0875-.65.35-1.0875.6375-1.3375-2.225-.25-4.55-1.1125-4.55-4.9375 0-1.0875.3875-1.9875 1.025-2.6875-.1-.25-.45-1.275.1-2.65 0 0 .8375-.2625 2.75 1.025.8-.225 1.65-.3375 2.5-.3375s1.7.1125 2.5.3375c1.9125-1.3 2.75-1.025 2.75-1.025.55 1.375.2 2.4.1 2.65.6375.7 1.025 1.5875 1.025 2.6875 0 3.8375-2.3375 4.6875-4.5625 4.9375.3625.3125.675.9125.675 1.85 0 1.3375-.0125 2.4125-.0125 2.75 0 .2625.1875.575.6875.475C19.1375 20.1625 22 16.425 22 12c0-5.525-4.475-10-10-10z"/></svg>
             View on GitHub
@@ -557,26 +557,68 @@ kubectl logs -f deployment/slack-researcher -n &lt;namespace&gt;</code></pre>
           <a href="https://github.com/kagenti/kagenti" rel="noopener noreferrer">GitHub</a>
           <a href="https://github.com/kagenti/kagenti/blob/main/LICENSE" rel="noopener noreferrer">Apache License</a>
           <a href="privacy.html">Privacy policy</a>
-          <a href="#" id="cookie-manage-link">Cookie preferences</a>
+          <a href="#" id="cookie-manage-link">Analytics preferences</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Cookie consent bar — shown only when no preference is stored -->
-  <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookie consent" hidden>
+  <!-- Analytics consent bar — shown only when no preference is stored -->
+  <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Analytics consent" hidden>
     <div class="container cookie-bar-inner">
       <p class="cookie-bar-text">
-        We use analytics cookies to understand how visitors use this site.
+        We use Google Analytics cookies to understand how visitors use this site.
         <a href="privacy.html" class="cookie-bar-link">Privacy policy</a>
       </p>
       <div class="cookie-bar-actions">
         <button class="btn btn-ghost btn-sm" id="cookie-decline">Decline</button>
-        <button class="btn btn-primary btn-sm" id="cookie-accept">Accept cookies</button>
+        <button class="btn btn-primary btn-sm" id="cookie-accept">Accept analytics</button>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var REPO = 'kagenti/kagenti';
+      var CACHE_KEY = 'kagenti-gh-stats';
+      var CACHE_TTL = 3600000; // 1 hour
+
+      function apply(data) {
+        var nav = document.getElementById('nav-star-count');
+        if (nav && data.stars != null) nav.textContent = data.stars + ' \u2605';
+        var s = document.getElementById('oss-stars');
+        if (s && data.stars != null) s.textContent = data.stars;
+        var f = document.getElementById('oss-forks');
+        if (f && data.forks != null) f.textContent = data.forks;
+        var c = document.getElementById('oss-contributors');
+        if (c && data.contributors != null) c.textContent = data.contributors;
+      }
+
+      try {
+        var cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+        if (cached && Date.now() - cached.ts < CACHE_TTL) { apply(cached); return; }
+      } catch (e) {}
+
+      fetch('https://api.github.com/repos/' + REPO)
+        .then(function (r) { return r.json(); })
+        .then(function (repo) {
+          var data = { stars: repo.stargazers_count, forks: repo.forks_count, ts: Date.now() };
+          return fetch('https://api.github.com/repos/' + REPO + '/contributors?per_page=1&anon=true', { method: 'HEAD' })
+            .then(function (r) {
+              var link = r.headers.get('link') || '';
+              var match = link.match(/page=(\d+)>;\s*rel="last"/);
+              data.contributors = match ? parseInt(match[1], 10) : null;
+              return data;
+            })
+            .catch(function () { return data; });
+        })
+        .then(function (data) {
+          apply(data);
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (e) {}
+        })
+        .catch(function () {});
+    })();
+  </script>
 </body>
 </html>
