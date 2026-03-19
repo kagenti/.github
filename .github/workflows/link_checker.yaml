@@ -1,5 +1,5 @@
 
-name: Check links in Hugo site
+name: Check links in site
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
   schedule:
     - cron: '0 0 * * 0' # Runs every Sunday at 00:00 UTC
 
-# Default to bash
 defaults:
   run:
     shell: bash
