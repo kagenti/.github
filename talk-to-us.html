@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Demo — Kagenti</title>
+  <meta name="description" content="Get in touch with the Kagenti team.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&family=Red+Hat+Mono:wght@400;500&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .ttu-main {
+      min-height: calc(100vh - 57px);
+      display: flex;
+      align-items: center;
+      background: var(--c-surface);
+      border-bottom: none;
+      padding-block: var(--sp-20);
+    }
+    .ttu-body { max-width: 560px; }
+    .ttu-body h1 {
+      font-size: var(--sz-heading);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+      color: var(--c-text);
+    }
+    .ttu-body > p {
+      font-size: var(--sz-body);
+      color: var(--c-muted);
+      line-height: 1.65;
+      margin-bottom: var(--sp-8);
+    }
+    .ttu-actions {
+      display: flex;
+      gap: var(--sp-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-10);
+    }
+    .ttu-note {
+      font-size: var(--sz-body);
+      color: var(--c-muted);
+      line-height: 1.6;
+      border-top: 1px solid var(--c-border);
+      padding-top: var(--sp-6);
+    }
+    .ttu-note a { color: var(--c-accent); font-weight: 500; text-decoration: none; }
+    .ttu-note a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Minimal header — no banner, no nav links needed on this page -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Kagenti home">
+        <svg viewBox="0 0 250 250" aria-hidden="true" focusable="false">
+          <path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" fill="#ee0000"/>
+        </svg>
+        <span class="logo-wordmark">kagenti</span>
+      </a>
+      <div style="margin-left: auto;">
+        <a href="index.html" style="font-size: 0.875rem; color: var(--c-muted); text-decoration: none;">← Back to site</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="ttu-main">
+      <div class="container">
+        <div class="ttu-body">
+          <span class="label" aria-hidden="true">Get in touch</span>
+          <h1>Thank you for your interest.</h1>
+          <p>
+            We'd love to hear about your use case. Email us or join the Discord — we respond to every message.
+          </p>
+          <div class="ttu-actions">
+            <a href="mailto:kagenti-maintainers@googlegroups.com" class="btn btn-primary">
+              Send us an email
+            </a>
+            <a href="https://discord.gg/aJ92dNDzqB" class="btn btn-ghost" rel="noopener noreferrer">
+              Join Discord
+            </a>
+          </div>
+          <p class="ttu-note">
+            In the meantime
+            <a href="https://github.com/kagenti/kagenti" rel="noopener noreferrer">explore the code on GitHub</a>,
+            read the
+            <a href="https://github.com/kagenti/kagenti#architecture" rel="noopener noreferrer">architecture overview</a>,
+            or
+            <a href="https://github.com/kagenti/kagenti/blob/main/docs/install.md" rel="noopener noreferrer">try the quickstart</a>
+            to evaluate the platform before we talk.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
