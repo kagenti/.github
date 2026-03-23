@@ -921,7 +921,7 @@ section { padding-block: var(--sp-20); border-bottom: 1px solid var(--c-border);
    -------------------------------------------------------------------------- */
 .credentials { background: var(--c-surface); }
 
-.credentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-8); }
+.credentials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-8); }
 
 .credential-block { border-top: 2px solid var(--c-border); padding-top: var(--sp-5); }
 .credential-block.featured { border-top-color: var(--c-accent); }
