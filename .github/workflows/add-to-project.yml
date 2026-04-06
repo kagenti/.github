@@ -1,0 +1,16 @@
+name: Reusable - Add to Kagenti Project
+
+on:
+  workflow_call:
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add issue or PR to Kagenti Project
+        continue-on-error: true
+        uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/orgs/kagenti/projects/8
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
