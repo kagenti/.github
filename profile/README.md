@@ -22,12 +22,12 @@ Built on open standards:
 - **[workload-harness](https://github.com/kagenti/workload-harness)** - Tools for agent load generation on the Kagenti platform (Python)
 - **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
 
-Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
-Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
+### Get involved
 
-Find out more: [http://kagenti.io](http://kagenti.io)
-
-Let's chat! Meet us on our [Kagenti Discord](https://discord.gg/aJ92dNDzqB) channel!
+- 📖 Start with the [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) guide
+- 👥 Meet the [maintainers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md)
+- 🌐 Learn more at [kagenti.io](http://kagenti.io)
+- 💬 Or just come say hi in the [Kagenti Discord](https://discord.gg/aJ92dNDzqB)
 <!--
 
 **Here are some ideas to get you started:**
