@@ -1,24 +1,33 @@
 ## Kagenti - The Agentic Platform
-Kagenti is a Cloud-native middleware providing a framework-neutral, scalable and secure platform for deploying and orchestrating AI agents through a standardized REST API.
+An open source platform for building, deploying, securing, and governing AI agents on Kubernetes.
 
-This project consists of following repositories:
+Built on open standards:
+- [A2A](https://github.com/google/A2A) — agent-to-agent communication
+- [MCP](https://modelcontextprotocol.io/) — agent-to-tool integration
 
-1. **[kagenti](https://github.com/kagenti/kagenti)** - Main installer, UI, and Documentation
-2. **[agent-examples](https://github.com/kagenti/agent-examples)** - Sample agents and tools (Python)
-3. **[mcp-gateway](https://github.com/kagenti/mcp-gateway)** - Envoy-based MCP Gateway (Go)
-4. **[kagenti-operator](https://github.com/kagenti/kagenti-operator)** - Kubernetes operator for agents/tools (Go)
-5. **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
-6. **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Extensions and plugins (Go)
-7. **[agentic-control-plane](https://github.com/kagenti/agentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs.
-8. **[plugins-adapter](https://github.com/kagenti/plugins-adapter)** - Adapter for security and safety plugins for Envoy gateways
-9. **[workload-harness](https://github.com/kagenti/workload-harness)** - Tools for agent load generation on the Kagenti platform
+### Repositories
 
-Want to contribute? Check our [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) page.
-Project is maintained by [a team of developers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md).
+- **[ecosystem-guide](https://github.com/kagenti/ecosystem-guide)** - Central reference for the Kagenti ecosystem
+- **[kagenti](https://github.com/kagenti/kagenti)** - Main installer, UI, and documentation (Python)
+- **[adk](https://github.com/kagenti/adk)** - Kagenti Agent Development Kit (Python)
+- **[adk-starter](https://github.com/kagenti/adk-starter)** - Starter template for building agents with the Kagenti ADK (Python)
+- **[agent-examples](https://github.com/kagenti/agent-examples)** - Sample agents and tools (Python)
+- **[kagenti-operator](https://github.com/kagenti/kagenti-operator)** - Kubernetes operator for deploying and lifecycle management of agents and tools (Go)
+- **[kagenti-extensions](https://github.com/kagenti/kagenti-extensions)** - Kubernetes security extensions for zero-trust agent authentication (Go)
+- **[agentic-control-plane](https://github.com/kagenti/agentic-control-plane)** - Control plane composed of specialized A2A agents coordinated through Kagenti CRDs (Python)
+- **[mcp-gateway](https://github.com/Kuadrant/mcp-gateway)** - Envoy-based MCP Gateway (Go) — *hosted under [Kuadrant](https://github.com/Kuadrant) org*
+- **[plugins-adapter](https://github.com/kagenti/plugins-adapter)** - Adapter for security and safety plugins for Envoy-based MCP Gateway (Python)
+- **[onecli](https://github.com/kagenti/onecli)** - Open-source credential vault that gives your AI agents access to services without exposing keys (TypeScript)
+- **[capture-the-flag](https://github.com/kagenti/capture-the-flag)** - Capture the flag scenarios to demonstrate and test Kagenti's security posture
+- **[workload-harness](https://github.com/kagenti/workload-harness)** - Tools for agent load generation on the Kagenti platform (Python)
+- **[.github](https://github.com/kagenti/.github)** - Project website and documentation (Hugo/HTML)
 
-Find out more: [http://kagenti.io](http://kagenti.io)
+### Get involved
 
-Let's chat! Meet us on our [Kagenti Discord](https://discord.gg/aJ92dNDzqB) channel!
+- 📖 Start with the [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) guide
+- 👥 Meet the [maintainers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md)
+- 🌐 Learn more at [kagenti.io](http://kagenti.io)
+- 💬 Or just come say hi in the [Kagenti Discord](https://discord.gg/aJ92dNDzqB)
 <!--
 
 **Here are some ideas to get you started:**
