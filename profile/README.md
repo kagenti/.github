@@ -27,14 +27,4 @@ Built on open standards:
 - 📖 Start with the [CONTRIBUTING](https://github.com/kagenti/kagenti/blob/main/CONTRIBUTING.md) guide
 - 👥 Meet the [maintainers](https://github.com/kagenti/kagenti/blob/main/MAINTAINERS.md)
 - 🌐 Learn more at [kagenti.io](http://kagenti.io)
-- 💬 Or just come say hi in the [Kagenti Discord](https://discord.gg/aJ92dNDzqB)
-<!--
-
-**Here are some ideas to get you started:**
-
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+- 💬 Or just come say hi in the [Kagenti Slack](https://ibm.biz/kagenti-slack)
