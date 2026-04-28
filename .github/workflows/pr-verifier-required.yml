@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Enforce PR title prefixes (case-sensitive)
-        uses: deepakputhraya/action-pr-title@v2
+        uses: deepakputhraya/action-pr-title@3864bebc79c5f829d25dd42d3c6579d040b0ef16 # v1.0.2
         with:
           # Union of conventional and template-derived categories
           allowed_prefixes: >
