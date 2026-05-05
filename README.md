@@ -18,7 +18,7 @@ This is the primary marketing site for Kagenti, an open-source platform for depl
 Kagenti is positioned as the **infrastructure layer** beneath the agent, not a competing agent framework. The three-word positioning — *deploy, secure, govern* — anchors every section:
 
 - **Deploy:** Kubernetes-native, Ansible-automated, framework-neutral. You bring the agent; Kagenti handles workload lifecycle.
-- **Secure:** Zero-trust identity via SPIFFE/SPIRE and authbridge, injected at deploy time. No agent code changes required.
+- **Secure:** Zero-trust identity via SPIFFE/SPIRE and AuthBridge, injected at deploy time. No agent code changes required.
 - **Govern:** Unified control plane, observability, and policy enforcement across all agents and tools.
 
 The site leans hard into open-source credibility: Apache 2.0, auditable code, no feature gating, no proprietary runtime dependencies.
@@ -33,7 +33,7 @@ The page tells a single story from top to bottom:
 
 3. **Getting Started:** Reduces time-to-value friction. Shows the install is four commands. Pairs with a real UI screenshot (light/dark variants served via `<picture>` and `prefers-color-scheme`) to make the platform tangible.
 
-4. **Demo Carousel:** Three concrete use cases (MCP Gateway, authbridge zero-trust, Lifecycle via Dashboard) showing real code. The first slide pairs with a YouTube tutorial so visitors can see the platform in motion without committing to a full demo call.
+4. **Demo Carousel:** Three concrete use cases (MCP Gateway, AuthBridge zero-trust, Lifecycle via Dashboard) showing real code. The first slide pairs with a YouTube tutorial so visitors can see the platform in motion without committing to a full demo call.
 
 5. **Community & Roadmap:** Social proof through contributor avatars and GitHub project board. Includes a "What's next" column covering the roadmap toward persistent, long-running agents — with memory, sandboxing, an Agent Development Kit, and improved developer experience as the core building blocks.
 
