@@ -122,9 +122,9 @@
           </div>
 
           <div class="component-card">
-            <div class="component-card-meta">AuthBridge · SPIRE · Keycloak · Envoy</div>
+            <div class="component-card-meta">authbridge · SPIRE · Keycloak · Envoy</div>
             <h3><a href="https://github.com/kagenti/kagenti/blob/main/docs/identity-guide.md" rel="noopener noreferrer">Security</a></h3>
-            <p>AuthBridge injects zero-trust workload identity and JWT enforcement at deploy time. SPIRE issues cryptographic workload identities; Keycloak manages OAuth2 token scoping and validation.</p>
+            <p>authbridge injects zero-trust workload identity and JWT enforcement at deploy time. SPIRE issues cryptographic workload identities; Keycloak manages OAuth2 token scoping and validation.</p>
           </div>
 
           <div class="component-card">
@@ -245,7 +245,7 @@ deployments/ansible/run-install.sh <span class="key">--env</span> <span class="v
                   <li>Gateway handles routing, protocol translation, and token exchange for every tool call</li>
                   <li>Replace or upgrade tools by updating one URL — no agent rebuild required</li>
                 </ul>
-                <a href="https://github.com/kagenti/kagenti-extensions/blob/main/AuthBridge/demos/github-issue/demo.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
+                <a href="https://github.com/kagenti/kagenti-extensions/blob/main/authbridge/demos/github-issue/demo.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
               </div>
               <div class="demo-slide-code">
                 <a href="https://www.youtube.com/watch?v=5SpTwERN2jU" class="demo-video" rel="noopener noreferrer" aria-label="Watch tutorial: GitHub Issue Agent with Kagenti MCP Gateway on YouTube">
@@ -299,12 +299,12 @@ curl -s -H <span class="str">"Authorization: Bearer $TOKEN"</span> \
             <div class="demo-slide-inner demo-slide-inner--code">
               <div class="demo-slide-prose">
                 <span class="label" aria-hidden="true">Demo: Weather Service Agent</span>
-                <h3>Enforce zero-trust identity with AuthBridge.</h3>
-                <p>AuthBridge injects zero-trust identity and auth enforcement into any agent at deploy time. The Weather Service Agent gets a Keycloak identity, JWT validation, and proxy enforcement — without writing a line of auth code.</p>
+                <h3>Enforce zero-trust identity with authbridge.</h3>
+                <p>authbridge injects zero-trust identity and auth enforcement into any agent at deploy time. The Weather Service Agent gets a Keycloak identity, JWT validation, and proxy enforcement — without writing a line of auth code.</p>
                 <ul>
                   <li>SPIFFE identity and Keycloak registration provisioned at deploy</li>
                   <li>Inbound requests validated at the Envoy proxy — invalid tokens never reach agent code</li>
-                  <li>AuthBridge adds 3 sidecars; the agent container is unmodified</li>
+                  <li>authbridge adds 3 sidecars; the agent container is unmodified</li>
                 </ul>
                 <a href="https://github.com/kagenti/kagenti-extensions/blob/main/authbridge/demos/weather-agent/demo-ui.md" class="cred-link" rel="noopener noreferrer">View demo on GitHub →</a>
               </div>
@@ -319,7 +319,7 @@ python demos/webhook/setup_keycloak.py \
   --namespace team1 \
   --service-account weather-service
 
-<span class="dk"># 3 AuthBridge sidecars + agent = 4/4 containers</span>
+<span class="dk"># 3 authbridge sidecars + agent = 4/4 containers</span>
 kubectl get pods -n team1
 <span class="dk"># weather-service-xxx   4/4   Running
 # weather-tool-xxx      1/1   Running</span>
