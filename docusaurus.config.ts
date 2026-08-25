@@ -76,6 +76,8 @@ const config: Config = {
           exclude: [
             // Internal working notes — not part of the published site.
             'superpowers/**',
+            'authbridge/**',
+            'automation-health.md',
           ],
           versions: {
             current: {
