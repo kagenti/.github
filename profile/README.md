@@ -16,6 +16,7 @@ Built on open standards:
 - **[.github](https://github.com/rossoctl/.github)** - Project website and documentation (Docusaurus/HTML)
 - **[automation](https://github.com/rossoctl/automation)** - Automated org maintenance tooling using a scanner/fixer pattern (Shell)
 - **[agent-skills](https://github.com/rossoctl/agent-skills)** - Reusable agent skills for org automation, such as link-health, automated pull request reviewing, and dependency scanning (Shell)
+- **[rossoctl-cli](https://github.com/rossoctl/rossoctl-cli)** - Command-line interface for Rossoctl (Go)
 
 #### Experimental
 
@@ -23,7 +24,6 @@ Built on open standards:
 - **[capture-the-flag](https://github.com/rossoctl/capture-the-flag)** - Capture the flag scenarios to demonstrate and test Rossoctl's security posture
 - **[workload-harness](https://github.com/rossoctl/workload-harness)** - Benchmarking and load-generation harness for evaluating agents on the Rossoctl platform (Shell)
 - **[context-guru](https://github.com/rossoctl/context-guru)** - Context engineering for agentic systems — compacts and summarizes LLM context to cut cost and latency while preserving accuracy (Go)
-- **[rossoctl-cli](https://github.com/rossoctl/rossoctl-cli)** - Command-line interface for Rossoctl (Go)
 
 ### Get involved
 
