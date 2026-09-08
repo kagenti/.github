@@ -10,6 +10,10 @@
 @import '@fontsource/ibm-plex-sans/500.css';
 @import '@fontsource/ibm-plex-sans/600.css';
 @import '@fontsource/ibm-plex-sans/700.css';
+/* IBM Plex Mono for code — the sibling of Plex Sans, so code and prose share
+   the same design language and metrics. */
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
 /* ============================================================================
  * DESIGN TOKENS (from the designer's spec). Applied site-wide via Infima vars.
@@ -382,4 +386,318 @@ h6 {
 }
 [data-theme='dark'] .rosso-footer__copyright {
   color: #000000;
+}
+
+/* ============================================================================
+ * DOCUMENTATION READING TYPOGRAPHY
+ *
+ * Scoped to the documentation and contributing instances only, via the
+ * plugin-id class Docusaurus puts on <html>. The ecosystem landing page
+ * (plugin-id-ecosystem) keeps the marketing type scale above — its 3rem hero
+ * is deliberate and is not touched here.
+ *
+ * Why: the site-wide scale is tuned for a landing page. On a long reference
+ * page it read as bulky, because h1 was 3rem against 0.875rem body — a 3.4x
+ * jump — and h3 through h6 were all 1.5rem, so nested sections had no
+ * hierarchy at all. This lowers the top of the scale, raises the body, and
+ * differentiates h3/h4, giving a 2.25x jump instead.
+ *
+ * Everything here is plain Infima/Docusaurus theming — stable theme classes
+ * and CSS variables, no swizzling and no hashed class names.
+ * ==========================================================================*/
+
+:root {
+  --rosso-doc-measure: 46rem;      /* ~72 characters at 1rem */
+  --rosso-doc-lead-color: #454545;
+  --rosso-doc-rule: #e0e0e0;
+  --rosso-code-bg: #f4f4f4;
+  --rosso-table-head-bg: #f4f4f4;
+  --rosso-sidebar-label: #6f6f6f;
+}
+
+[data-theme='dark'] {
+  --rosso-doc-lead-color: #c6c6c6;
+  --rosso-doc-rule: #383838;
+  --rosso-code-bg: #161616;
+  --rosso-table-head-bg: #1c1c1c;
+  --rosso-sidebar-label: #a8a8a8;
+}
+
+/* ---------- Body ---------- */
+
+.plugin-id-default .markdown,
+.plugin-id-contributing .markdown {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: var(--rosso-doc-measure);
+}
+
+/* Tables, code and diagrams are allowed to use the full column width. */
+.plugin-id-default .markdown > table,
+.plugin-id-default .markdown > .theme-code-block,
+.plugin-id-default .markdown > p > img,
+.plugin-id-default .markdown > .docusaurus-mermaid-container,
+.plugin-id-contributing .markdown > table,
+.plugin-id-contributing .markdown > .theme-code-block {
+  max-width: none;
+}
+
+.plugin-id-default .markdown p,
+.plugin-id-contributing .markdown p {
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- Headings ---------- */
+
+.plugin-id-default .markdown h1,
+.plugin-id-contributing .markdown h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+/* The first paragraph after the title is the page's standfirst. Every docs page
+   opens with a one- or two-sentence orientation, so give it slightly larger,
+   quieter type — it separates "what this page is" from the body. */
+.plugin-id-default .markdown > header + p,
+.plugin-id-contributing .markdown > header + p {
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--rosso-doc-lead-color);
+  margin-bottom: 2rem;
+}
+
+/* h2 opens a section, so it gets air above and a hairline rule under it. The
+   rule is what lets you find section boundaries while scrolling, and is the
+   main reason long pages stop reading as one undifferentiated block. */
+.plugin-id-default .markdown h2,
+.plugin-id-contributing .markdown h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rosso-doc-rule);
+}
+
+.plugin-id-default .markdown h3,
+.plugin-id-contributing .markdown h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.plugin-id-default .markdown h4,
+.plugin-id-contributing .markdown h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.plugin-id-default .markdown h5,
+.plugin-id-default .markdown h6,
+.plugin-id-contributing .markdown h5,
+.plugin-id-contributing .markdown h6 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* A heading immediately after the title should not add its usual top margin. */
+.plugin-id-default .markdown > header + h2,
+.plugin-id-contributing .markdown > header + h2 {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Lists ---------- */
+
+.plugin-id-default .markdown ul,
+.plugin-id-default .markdown ol,
+.plugin-id-contributing .markdown ul,
+.plugin-id-contributing .markdown ol {
+  padding-left: 1.35rem;
+  margin-bottom: 1.1rem;
+}
+
+.plugin-id-default .markdown li,
+.plugin-id-contributing .markdown li {
+  margin-bottom: 0.4rem;
+}
+
+.plugin-id-default .markdown li > ul,
+.plugin-id-default .markdown li > ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Links ---------- */
+
+/* Brand red carries a lot of weight in running text. Underlining it means a
+   link reads as a link rather than as emphasis. */
+.plugin-id-default .markdown p > a,
+.plugin-id-default .markdown li > a,
+.plugin-id-default .markdown td > a,
+.plugin-id-contributing .markdown p > a,
+.plugin-id-contributing .markdown li > a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+/* ---------- Code ---------- */
+
+.plugin-id-default .markdown code,
+.plugin-id-contributing .markdown code {
+  font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas,
+    monospace;
+  font-size: 0.875em;
+}
+
+/* Inline code: a quiet tint, no border — a border on every symbol name makes a
+   reference page look like a form. */
+.plugin-id-default .markdown :not(pre) > code,
+.plugin-id-contributing .markdown :not(pre) > code {
+  background: var(--rosso-code-bg);
+  border: none;
+  border-radius: 3px;
+  padding: 0.12em 0.34em;
+  color: inherit;
+}
+
+.plugin-id-default .theme-code-block,
+.plugin-id-contributing .theme-code-block {
+  --prism-background-color: var(--rosso-code-bg) !important;
+  box-shadow: none;
+  border: 1px solid var(--rosso-doc-rule);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.plugin-id-default .theme-code-block pre code,
+.plugin-id-contributing .theme-code-block pre code {
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+/* ---------- Tables ---------- */
+
+.plugin-id-default .markdown table,
+.plugin-id-contributing .markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--rosso-doc-rule);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin-bottom: 1.75rem;
+}
+
+.plugin-id-default .markdown table thead tr,
+.plugin-id-contributing .markdown table thead tr {
+  background: var(--rosso-table-head-bg);
+  border-bottom: 1px solid var(--rosso-doc-rule);
+}
+
+.plugin-id-default .markdown table th,
+.plugin-id-contributing .markdown table th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+}
+
+.plugin-id-default .markdown table td,
+.plugin-id-contributing .markdown table td {
+  padding: 0.7rem 0.9rem;
+  border-top: 1px solid var(--rosso-doc-rule);
+}
+
+/* Infima stripes alternate rows; hairlines read cleaner on a reference table. */
+.plugin-id-default .markdown table tr:nth-child(2n),
+.plugin-id-contributing .markdown table tr:nth-child(2n) {
+  background: transparent;
+}
+
+/* ---------- Admonitions ---------- */
+
+.plugin-id-default .theme-admonition,
+.plugin-id-contributing .theme-admonition {
+  border-radius: 4px;
+  border-left-width: 3px;
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+.plugin-id-default .theme-admonition p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Sidebar ---------- */
+
+.plugin-id-default .theme-doc-sidebar-menu {
+  font-size: 0.9375rem;
+}
+
+/* Top-level section headings read as group labels, the way they do in a
+   reference manual: small, letter-spaced, quiet. They stay clickable. */
+.plugin-id-default
+  .theme-doc-sidebar-menu
+  > .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  > .menu__link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rosso-sidebar-label);
+}
+
+.plugin-id-default
+  .theme-doc-sidebar-menu
+  > .theme-doc-sidebar-item-category-level-1 {
+  margin-top: 1.25rem;
+}
+
+.plugin-id-default .menu__link {
+  line-height: 1.45;
+}
+
+/* ---------- Table of contents ---------- */
+
+.plugin-id-default .table-of-contents {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  border-left: none;
+}
+
+.plugin-id-default .table-of-contents__left-border {
+  border-left: none;
+}
+
+.plugin-id-default .theme-doc-toc-desktop > .table-of-contents::before {
+  content: 'On this page';
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rosso-sidebar-label);
+  padding: 0 0 0.6rem 0.6rem;
+}
+
+.plugin-id-default .table-of-contents__link {
+  color: var(--rosso-sidebar-label);
+}
+
+.plugin-id-default .table-of-contents__link--active {
+  font-weight: 500;
 }
