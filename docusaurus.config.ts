@@ -1,6 +1,25 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+
+// === Versioning ===
+// The version map is derived from versions.json, which `docusaurus docs:version`
+// writes newest-first. Cutting the next release therefore needs only the snapshot
+// plus that file — no edit here, and no version hard-coded in this config.
+//
+//   the newest release -> /docs/*        labelled "vX.Y (latest)"
+//   an older release   -> /docs/X.Y/*    labelled "vX.Y"
+//   the docs/ folder   -> /docs/dev/*    labelled "dev", synced from rossoctl/rossoctl
+//
+// docs/ is NOT committed here: scripts/sync-docs.sh mirrors it from
+// rossoctl/rossoctl on every build, so "dev" always matches that repo 1:1.
+const versionsFile = path.join(__dirname, 'versions.json');
+const releasedVersions: string[] = fs.existsSync(versionsFile)
+  ? JSON.parse(fs.readFileSync(versionsFile, 'utf8'))
+  : [];
+const LATEST_VERSION = releasedVersions[0];
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -79,11 +98,30 @@ const config: Config = {
             'authbridge/**',
             'automation-health.md',
           ],
-          versions: {
-            current: {
-              label: 'dev',
-            },
-          },
+          ...(LATEST_VERSION
+            ? {
+                // The newest release is the default at /docs.
+                lastVersion: LATEST_VERSION,
+                versions: {
+                  // Released versions first, then the unreleased "dev" version —
+                  // this object order is the version dropdown order.
+                  ...Object.fromEntries(
+                    releasedVersions.map((v) => [
+                      v,
+                      {
+                        label: v === LATEST_VERSION ? `v${v} (latest)` : `v${v}`,
+                        path: v === LATEST_VERSION ? '' : v,
+                        badge: true,
+                      },
+                    ]),
+                  ),
+                  current: {label: 'dev', path: 'dev', banner: 'unreleased'},
+                },
+              }
+            : {
+                // Before the first version is cut, docs/ is the only version.
+                versions: {current: {label: 'dev'}},
+              }),
         },
         // Blog is an EXTERNAL Medium link (see navbar) — no local blog.
         blog: false,
@@ -184,27 +222,14 @@ const config: Config = {
           target: '_blank',
           rel: 'noopener noreferrer',
         },
-        // === TEMPORARY: "dev" version dropdown hidden until docs go public. ===
-        // It only links into /docs/*, so it's removed while docs are unpublished.
-        // TO RESTORE: uncomment this item (requires re-enabling `docs` in the preset above).
-        /* {
-          // Docs version selector, on the left after Blog. Rendered as an
-          // explicit dropdown (caret + menu) because Docusaurus collapses its
-          // built-in `docsVersionDropdown` to a plain link while only one
-          // version exists. Selecting "dev" opens the first docs page
-          // (Getting Started). When v0.7 is cut, replace this with
-          // `{ type: 'docsVersionDropdown', position: 'left' }` — it will then
-          // auto-list v0.7 (latest) and dev.
-          type: 'dropdown',
-          label: 'dev',
+        {
+          // Docs version selector. Lists the released versions newest-first, then
+          // the unreleased "dev" version, matching the order in the preset above.
+          type: 'docsVersionDropdown',
           position: 'left',
-          items: [
-            {
-              label: 'dev',
-              to: '/docs/category/getting-started',
-            },
-          ],
-        }, */
+          dropdownActiveClassDisabled: true,
+          versions: [...releasedVersions, 'current'],
+        },
         {
           // Live GitHub star count (icon + "N stars"), fetched client-side.
           // See src/components/GitHubStars + theme/NavbarItem/ComponentTypes.
