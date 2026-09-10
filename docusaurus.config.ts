@@ -123,6 +123,10 @@ const config: Config = {
                       v,
                       {
                         label: v === LATEST_VERSION ? `v${v} (latest)` : `v${v}`,
+                        // Docusaurus already routes the lastVersion at the bare
+                        // /docs and the rest under /docs/<version>. Stating it
+                        // here is deliberate: it documents the URL shape at the
+                        // point a reader looks for it. Keep it.
                         path: v === LATEST_VERSION ? '' : v,
                         badge: true,
                       },

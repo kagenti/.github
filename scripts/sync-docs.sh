@@ -49,7 +49,9 @@ if [[ -d "$UP" ]]; then
   # matters for versioning: `docusaurus docs:version` snapshots whatever is in
   # docs/ into a COMMITTED versioned_docs/ folder, so without this every release
   # would freeze a copy of those notes into this repo.
-  rsync -a --delete --exclude '.DS_Store' --exclude '_internal' "$UP"/ "$DEST"/
+  # '/_internal' is anchored to the top of the transfer, so it excludes exactly
+  # docs/_internal/ and not a directory of that name at any other depth.
+  rsync -a --delete --exclude '.DS_Store' --exclude '/_internal' "$UP"/ "$DEST"/
 
   # MIGRATION WINDOW: the restructured docs tree provides docs/index.md with
   # `slug: /` as the /docs/ landing page (see sidebars.ts, which no longer wraps
