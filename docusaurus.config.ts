@@ -92,8 +92,21 @@ const config: Config = {
           // versions exist yet. When the first is cut
           // (`npm run docusaurus docs:version 0.7`), it becomes the default
           // "latest" and "dev" stays as the work-in-progress version.
+          // IMPORTANT: providing `exclude` REPLACES Docusaurus's defaults rather
+          // than adding to them, so the defaults are repeated here verbatim. The
+          // '**/_*/**' entry is what keeps docs/_internal/** — the team's plans,
+          // research, retrospectives and QA notes — out of the build. Dropping it
+          // publishes those notes and fails the build on their repo-relative
+          // image links.
           exclude: [
-            // Internal working notes — not part of the published site.
+            // --- Docusaurus defaults. Do not remove. ---
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            // --- Legacy locations, pre-restructure. Harmless once upstream has
+            // moved this content under docs/_internal/; kept so this config is
+            // correct whichever order the two PRs land in. ---
             'superpowers/**',
             'authbridge/**',
             'automation-health.md',
@@ -110,6 +123,10 @@ const config: Config = {
                       v,
                       {
                         label: v === LATEST_VERSION ? `v${v} (latest)` : `v${v}`,
+                        // Docusaurus already routes the lastVersion at the bare
+                        // /docs and the rest under /docs/<version>. Stating it
+                        // here is deliberate: it documents the URL shape at the
+                        // point a reader looks for it. Keep it.
                         path: v === LATEST_VERSION ? '' : v,
                         badge: true,
                       },

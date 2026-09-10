@@ -43,22 +43,30 @@ fi
 UP="$SRC/$SUBDIR"
 if [[ -d "$UP" ]]; then
   mkdir -p "$DEST"
-  rsync -a --delete --exclude '.DS_Store' "$UP"/ "$DEST"/
+  # _internal/ holds the team's engineering notes (plans, research, retrospectives,
+  # QA matrices, developer setup). Docusaurus would ignore them anyway via its
+  # default '**/_*/**' exclude, but keeping them out of the site tree entirely
+  # matters for versioning: `docusaurus docs:version` snapshots whatever is in
+  # docs/ into a COMMITTED versioned_docs/ folder, so without this every release
+  # would freeze a copy of those notes into this repo.
+  # '/_internal' is anchored to the top of the transfer, so it excludes exactly
+  # docs/_internal/ and not a directory of that name at any other depth.
+  rsync -a --delete --exclude '.DS_Store' --exclude '/_internal' "$UP"/ "$DEST"/
 
-  # The /docs/ root is a GENERATED INDEX (see sidebars.ts), not a markdown file.
-  # By default Docusaurus maps docs/README.md to the /docs/ route, which would
-  # collide with that generated index. Give README a slug so it ships as an
-  # ordinary page (/docs/readme) and frees the root route. Prepend frontmatter
-  # (upstream README has none). Skip if it somehow already has frontmatter.
-  README="$DEST/README.md"
-  if [[ -f "$README" ]] && ! head -1 "$README" | grep -q '^---$'; then
-    printf -- '---\nslug: /readme\nsidebar_label: Overview\n---\n\n%s' "$(cat "$README")" > "$README.tmp"
-    mv "$README.tmp" "$README"
+  # MIGRATION WINDOW: the restructured docs tree provides docs/index.md with
+  # `slug: /` as the /docs/ landing page (see sidebars.ts, which no longer wraps
+  # everything in a generated-index category). Until that lands upstream,
+  # synthesise a minimal one so the /docs/ route — and the navbar's
+  # "Documentation" link — still resolves. This becomes a no-op the moment
+  # upstream ships its own index.md, and can then be deleted.
+  if [[ ! -f "$DEST/index.md" ]]; then
+    printf -- '---\ntitle: Rossoctl documentation\nslug: /\n---\n\nChoose a section from the sidebar.\n' \
+      > "$DEST/index.md"
+    echo "==> synthesised docs/index.md (upstream does not provide one yet)."
   fi
 
-  # Rewrite links to README.md -> index.md (Docusaurus folder-index convention).
-  # (README is no longer the folder index, but existing ./README.md links across
-  # the docs still resolve to the same page; keep this so cross-links don't break.)
+  # Rewrite any remaining links to README.md -> index.md (Docusaurus folder-index
+  # convention), so a cross-link written against a folder README still resolves.
   find "$DEST" -name '*.md' -type f -print0 | while IFS= read -r -d '' f; do
     sed -i.bak -E 's#\]\(([^)]*)README\.md#](\1index.md#g' "$f" && rm -f "$f.bak"
   done
