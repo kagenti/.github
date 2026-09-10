@@ -24,6 +24,7 @@ Built on open standards:
 - **[capture-the-flag](https://github.com/rossoctl/capture-the-flag)** - Capture the flag scenarios to demonstrate and test Rossoctl's security posture
 - **[workload-harness](https://github.com/rossoctl/workload-harness)** - Benchmarking and load-generation harness for evaluating agents on the Rossoctl platform (Shell)
 - **[context-guru](https://github.com/rossoctl/context-guru)** - Context engineering for agentic systems — compacts and summarizes LLM context to cut cost and latency while preserving accuracy (Go)
+- **[aiac](https://github.com/rossoctl/aiac)** - AI-based Access Control — translates natural-language policy into enforced PDP rules for AI agents on Kubernetes (Python)
 
 ### Get involved
 
